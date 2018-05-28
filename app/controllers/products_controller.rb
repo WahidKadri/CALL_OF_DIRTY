@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
     @description = parsed_product["product"]["categories"]
 
     Product.create(name: @brand, brand: @brand, photo: @photo, description: @description)
-    end
   end
 
   def new
