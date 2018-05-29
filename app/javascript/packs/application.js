@@ -8,7 +8,7 @@ Quagga.init({
     target: document.querySelector('#barcode-scanner')    // Or '#yourElement' (optional)
   },
   decoder : {
-    readers : ['ean_8_reader']
+    readers : ['ean_reader']
   }
 }, function(err) {
   if (err) {
