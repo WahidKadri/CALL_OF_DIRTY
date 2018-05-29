@@ -22,9 +22,6 @@ class ProductsController < ApplicationController
     @description = parsed_product["product"]["categories"]
 
     Product.create(name: @brand, brand: @brand, photo: @photo, description: @description)
-
-
-
   end
 
   def edit
@@ -54,5 +51,9 @@ class ProductsController < ApplicationController
       @packaging_material = packaging["packaging_material"]
       Packaging.create(name: @packaging_name, material: @packaging_material)
     end
+  end
+
+  def scan
+    @product = Product.new
   end
 end
