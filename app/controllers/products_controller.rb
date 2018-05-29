@@ -4,7 +4,7 @@ require 'json'
 class ProductsController < ApplicationController
 
   def show
-    # @product = Product.find(params[:id])
+     @product = Product.find(params[:id])
   end
 
   def new
@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
     product_scan = Product.new(@attribut)
     product_scan.bar_code = @bar_code
     product_scan.save
+    redirect_to product_path(product_scan)
   end
 
   def edit
