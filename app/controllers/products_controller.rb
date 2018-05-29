@@ -12,10 +12,14 @@ class ProductsController < ApplicationController
 
   def create
     @bar_code = params[:product][:bar_code]
-    get_product_info(@bar_code)
-    product_scan = Product.new(@attribut)
-    product_scan.bar_code = @bar_code
-    product_scan.save
+    if Product.where(bar_code: @bar_code).exists?
+    product_scan = Product.find_by(bar_code: @bar_code)
+    else
+      get_product_info(@bar_code)
+      product_scan = Product.new(@attribut)
+      product_scan.bar_code = @bar_code
+      product_scan.save
+    end
     redirect_to product_path(product_scan)
   end
 
