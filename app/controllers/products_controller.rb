@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+   raise
   end
 
   def edit
@@ -33,6 +34,9 @@ class ProductsController < ApplicationController
   end
 
   def scan
-
+    @product = Product.new
   end
+
+
+
 end
