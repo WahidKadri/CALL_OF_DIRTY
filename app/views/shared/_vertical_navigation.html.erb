@@ -1,0 +1,60 @@
+<!--BOUTON-->
+  <button id="btn-burger">
+  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+      <path class="top" d="M30.1,39.2h40c20,0,20,35-10,45c-21.4,5.4-43.2-7.6-48.6-29c-3.2-12.7,0-26.1,8.6-36l60,60"/>
+      <path class="middle" d="M30.1,49.2h40"/>
+      <path class="bottom" d="M70.1,59.2h-40c-20,0-20-40,10-45c21.7-3.9,42.6,9.7,46.7,30.3S76.7,85,55,88.9
+        c-12.5,2.2-25.3-1.3-34.9-9.7l60-60"/>
+    </svg>
+    </button>
+<!--BOUTON-->
+
+
+
+<!--NAVIGATION-->
+  <nav>
+    <div id="logo-container">
+      <a href="#">Mon Logo</a>
+    </div>
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i> Accueil
+    <% end %>
+    <%= link_to root_path do %>
+      <i class="fas fa-barcode"></i> Mes scans
+    <% end %>
+    <%= link_to root_path do %>
+      <i class="fas fa-envelope"></i> Contact
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-user-slash"></i>Se déconnecter
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <i class="fas fa-user-check"></i>Se connecter
+      <% end %>
+    <% end %>
+  </nav>
+<!--NAVIGATION-->
+
+<!--MASQUE-->
+  <div id="mask"></div>
+<!--MASQUE-->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+  $(document).ready(function() {
+    $('#btn-burger, #mask').on('click', function() {
+      $('nav, main, body, #mask, #btn-burger').toggleClass('open');
+    });
+  });
+
+</script>
