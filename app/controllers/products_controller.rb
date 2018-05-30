@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
     end
 
   def get_sorting_data(product)
-    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getDetailProduct&coord=&ean='#{product.bar_code}'&scan=1&$zipcode=78210"
+    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getDetailProduct&coord=&ean=#{product.bar_code}&scan=1&$zipcode=78210"
 
     eugene_data_serialized = RestClient.get(url, headers={
       "Authorization" => ENV["EUGENE_SORTING_KEY"],
@@ -79,10 +79,11 @@ class ProductsController < ApplicationController
     parsed_eugene_data = JSON.parse(eugene_data_serialized)
 
     parsed_eugene_data.slice("recycle", "jette")
+
   end
 
   def get_packaging_data(product)
-    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getPackagingsAndMaterialsPerProduct&ean='#{product.bar_code}'&2="
+    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getPackagingsAndMaterialsPerProduct&ean=#{product.bar_code}&2="
 
     eugene_data_serialized = RestClient.get(url, headers={
       "Authorization" => ENV["EUGENE_PACKAGING_KEY"],

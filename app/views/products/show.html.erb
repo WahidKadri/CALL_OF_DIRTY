@@ -6,10 +6,10 @@
 
 <% @product.packagings.each do |packaging| %>
   <% if packaging.bin.color == "vert" %>
-    <p><%= packaging.name %></p>
-    <p>A jeter => dans poubelle à couvercle <%= packaging.bin.color %></p>
+    <h3><%= packaging.name %></h3>
+    <p> <strong>A jeter</strong> => dans poubelle à couvercle <%= packaging.bin.color %></p>
   <% else %>
-    <p><%= packaging.name %></p>
-    <p>A recycler => dans poubelle à couvercle <%= packaging.bin.color %></p>
+    <h3><%= packaging.name %></h3>
+    <p> <strong>A recycler </strong> => dans poubelle à couvercle <%= packaging.bin.color %></p>
   <% end %>
 <% end %>
