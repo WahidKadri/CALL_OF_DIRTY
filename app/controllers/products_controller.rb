@@ -13,17 +13,22 @@ class ProductsController < ApplicationController
 
   def create
     @bar_code = params[:product][:bar_code]
-    @attributes = get_product_info(@bar_code)
-    @product_scan = Product.new(@attributes)
-    @product_scan.bar_code = @bar_code
-
-    @sorting_hash = get_sorting_data(@product_scan)
-    data = get_packaging_data(@product_scan)
-    @bin = Bin.find()
-    @product_scan.save
-    Packaging.create(product: @product_scan, bin: @bin, )
-
+    if Product.where(bar_code: @bar_code).exists?
+      @product_scan = Product.find_by(bar_code: @bar_code)
+    else
+      @attributes = get_product_info(@bar_code)
+      @product_scan = Product.new(@attributes)
+      @product_scan.bar_code = @bar_code
+      @product_scan.save
+    end
     redirect_to product_path(@product_scan)
+
+
+
+    data = get_packaging_data(@product_scan)
+    @sorting_hash = get_sorting_data(@product_scan)
+    @bin = Bin.find()
+    Packaging.create(product: @product_scan, bin: @bin, )
   end
 
   def edit
@@ -82,9 +87,12 @@ class ProductsController < ApplicationController
 
     parsed_eugene_data = JSON.parse(eugene_data_serialized)
 
-    # parsed_eugene_data.each do |packaging|
-    #   @packaging_name = packaging["packaging_name"]
-    #   @packaging_material = packaging["packaging_material"]
-    # end
+    packagings_product = []
+    parsed_eugene_data.each do |packaging|
+      @packaging_name = packaging["packaging_name"]
+      @packaging_material = packaging["packaging_material"]
+      packagings_product << @packaging_name + @packaging_material
+    end
+    raise
   end
 end
