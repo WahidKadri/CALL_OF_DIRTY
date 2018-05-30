@@ -26,6 +26,3 @@ Quagga.onDetected(function(result) {
   form.submit();
   Quagga.stop()
 });
-
-
-
