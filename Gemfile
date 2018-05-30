@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'rest-client', '~> 1.8'
+gem 'omniauth-facebook'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
