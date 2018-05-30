@@ -3,3 +3,13 @@
 
 
 <%= image_tag(@product.photo) %>
+
+<% @product.packagings.each do |packaging| %>
+  <% if packaging.bin.color == "vert" %>
+    <p><%= packaging.name %></p>
+    <p>A jeter => dans poubelle à couvercle <%= packaging.bin.color %></p>
+  <% else %>
+    <p><%= packaging.name %></p>
+    <p>A recycler => dans poubelle à couvercle <%= packaging.bin.color %></p>
+  <% end %>
+<% end %>

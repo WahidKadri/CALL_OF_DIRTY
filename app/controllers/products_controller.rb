@@ -20,15 +20,22 @@ class ProductsController < ApplicationController
       @product_scan = Product.new(@attributes)
       @product_scan.bar_code = @bar_code
       @product_scan.save
+
+      data = get_packaging_data(@product_scan)
+      @sorting_hash = get_sorting_data(@product_scan)
+      data.each do |packaging|
+        if @sorting_hash["jette"].downcase.include?(packaging)
+          @bin = Bin.find_by(color: "vert")
+        elsif @sorting_hash["recycle"].downcase.include?("verre")
+          @bin = Bin.find_by(color: "blanc")
+        else
+          @bin = Bin.find_by(color: "jaune")
+        end
+
+        Packaging.create(name: packaging, product: @product_scan, bin: @bin)
+      end
     end
     redirect_to product_path(@product_scan)
-
-
-
-    data = get_packaging_data(@product_scan)
-    @sorting_hash = get_sorting_data(@product_scan)
-    @bin = Bin.find()
-    Packaging.create(product: @product_scan, bin: @bin, )
   end
 
   def edit
@@ -59,7 +66,7 @@ class ProductsController < ApplicationController
     end
 
   def get_sorting_data(product)
-    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getDetailProduct&ean='#{product.bar_code}'&zipcode=78210"
+    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getDetailProduct&coord=&ean='#{product.bar_code}'&scan=1&$zipcode=78210"
 
     eugene_data_serialized = RestClient.get(url, headers={
       "Authorization" => ENV["EUGENE_SORTING_KEY"],
@@ -75,7 +82,7 @@ class ProductsController < ApplicationController
   end
 
   def get_packaging_data(product)
-    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getPackagingsAndMaterialsPerProduct&ean='#{product.bar_code}'="
+    url = "http://boxdataexchange.uzer.eu/apps/product.php?action=getPackagingsAndMaterialsPerProduct&ean='#{product.bar_code}'&2="
 
     eugene_data_serialized = RestClient.get(url, headers={
       "Authorization" => ENV["EUGENE_PACKAGING_KEY"],
@@ -91,8 +98,8 @@ class ProductsController < ApplicationController
     parsed_eugene_data.each do |packaging|
       @packaging_name = packaging["packaging_name"]
       @packaging_material = packaging["packaging_material"]
-      packagings_product << @packaging_name + @packaging_material
+      packagings_product << @packaging_name.downcase + " " + @packaging_material.downcase
     end
-    raise
+    return packagings_product
   end
 end
