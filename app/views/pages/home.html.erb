@@ -2,9 +2,31 @@
 
 <div>
   <main>
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-    <%= link_to "SCAN", scan_product_path  %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <img src="http://via.placeholder.com/150x200">
+        </div>
+        <div class="col-xs-6 badges">
+          <img src="http://via.placeholder.com/60x60">
+        </div>
+        <div class="col-xs-6 badges">
+          <img src="http://via.placeholder.com/60x60">
+        </div>
+        <div class="col-xs-6 badges">
+          <img src="http://via.placeholder.com/60x60">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="http://via.placeholder.com/330x200">
+        </div>
+      </div>
+    </div>
+    <br>
+   <!--  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> -->
+    <div class="text-center">
+      <%= link_to "SCAN", scan_product_path, class:'btn btn-success'  %>
+    </div>
   </main>
 </div>
