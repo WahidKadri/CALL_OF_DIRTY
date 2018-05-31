@@ -1,16 +1,27 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@font-face {
+  font-family: "chocolate_covered_raindrops";
+  src: font-url('chocolate_covered_raindrops/chocolate_covered_raindrops.ttf') format('truetype');
+  font-weight: normal;
+}
 
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+@font-face {
+  font-family: "chocolate_covered_raindrops";
+  src: font-url('chocolate_covered_raindrops/chocolate_covered_raindrops_bold.ttf') format('truetype');
+  font-weight: bold;
+}
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+ $my-body-font: "chocolate_covered_raindrops";
+
+@font-face {
+  font-family: "miamagon";
+  src: font-url('miamagon/miamagon.otf') format('truetype');
+  font-weight: normal;
+}
+
+ $my-headers-font: "miamagon";
+
+// font-url('Avenir/AvenirBold.eot?#iefix') format('embedded-opentype'),
+
+// // Define fonts for body and headers
+$body-font: $my-body-font;
+$headers-font: $my-headers-font;
