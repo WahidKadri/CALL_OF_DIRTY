@@ -20,5 +20,15 @@ main {
   margin-top: 10px;
   font-size: 32px;
   padding: 3px 10px;
+  text-shadow: 1px 1px 3px black;
 }
 
+.background {
+  background-image: image-url('backgroundCOD.jpg');
+  background-size: cover;
+  height: 200px;
+  width: 150px;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.6;
+}
