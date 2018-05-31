@@ -72,6 +72,7 @@ nav .fa {
 
 /*BOUTON*/
 #btn-burger {
+  margin-top: -25px;
   width: 100px;
   height: 100px;
   position: fixed;
@@ -82,8 +83,9 @@ nav .fa {
   border: none;
   cursor: pointer;
   outline: none;
-
 }
+
+
 
 
 #btn-burger svg {
