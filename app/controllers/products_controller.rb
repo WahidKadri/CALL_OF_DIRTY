@@ -3,9 +3,9 @@ require 'json'
 
 class ProductsController < ApplicationController
 
+
   def show
      @product = Product.find(params[:id])
-
   end
 
   def new
@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
         Packaging.create(name: packaging, product: @product_scan, bin: @bin)
       end
     end
+    Scan.create(user: current_user, product: @product_scan)
     redirect_to product_path(@product_scan)
   end
 
