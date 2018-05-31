@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get 'products/scan', to: 'products#scan', as: :scan_product
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :scans, only: [:index]
 
 end
