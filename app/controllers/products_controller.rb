@@ -17,6 +17,10 @@ class ProductsController < ApplicationController
       @product_scan = Product.find_by(bar_code: @bar_code)
     else
       @attributes = get_product_info(@bar_code)
+      if @attributes.nil?
+        redirect_to scan_product_path, alert: "Please scan again"
+        return
+      end
       @product_scan = Product.new(@attributes)
       @product_scan.bar_code = @bar_code
       @product_scan.save
@@ -56,6 +60,7 @@ class ProductsController < ApplicationController
     url = "https://fr.openfoodfacts.org/api/v0/produit/'#{bar_code}'.json"
     product_serialized = open(url).read
     parsed_product = JSON.parse(product_serialized)
+    return nil if parsed_product["status_verbose"] == "product not found"
 
     attribut = {
       name: parsed_product["product"]["product_name_fr"],
