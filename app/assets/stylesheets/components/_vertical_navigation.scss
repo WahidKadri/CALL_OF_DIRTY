@@ -8,6 +8,11 @@ body.open {
 }
 
 /*NAVIGATION*/
+h3 {
+  padding-left: 40px;
+  margin-top: -38px;
+}
+
 h4 {
   padding-top: 135px;
   padding-left: 50px;
@@ -132,6 +137,7 @@ nav .fa {
 
 /*CONTENU*/
 main {
+  // transform: translateX(0);
   transition: transform 0.5s ease-in-out;
   padding: 80px 50px 0 30px;
 }
