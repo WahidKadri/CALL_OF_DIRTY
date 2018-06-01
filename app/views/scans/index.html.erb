@@ -1,20 +1,21 @@
 <%= render 'shared/vertical_navigation' %>
 
 
-<h3 class="text-center">MES SCANS</h3>
-<% @scans.each do |scan| %>
-<div class="container-card" >
-  <div class="flex">
-    <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
-  </div>
-  <div class="navigation">
-    <strong> <%= scan.product.brand %> </strong>
-    <%= scan.product.name %>
-    <br>
- <em> <span>scanné le <%= scan.created_at.strftime('%D') %></span></em>
-  </div>
-</div>
+<main>
+  <h3 class="text-center">MES SCANS</h3>
+  <% @scans.each do |scan| %>
+    <div class="container-card" >
+      <div class="flex">
+        <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+      </div>
+      <div class="navigation">
+        <strong> <%= scan.product.brand %> </strong>
+        <%= scan.product.name %>
+        <br>
+        <em> <span>scanné le <%= scan.created_at.strftime('%D') %></span></em>
+      </div>
+    </div>
   <% end %>
-
+</main>
 <div class="background-card">
 </div>
