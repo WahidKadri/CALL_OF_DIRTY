@@ -10,17 +10,21 @@
   font-weight: bold;
 }
 
+// @font-face {
+//   font-family: "chocolate_covered_raindrops";
+//   src: font-url('chocolate_covered_raindrops/chocolate_covered_raindrops_hollow.ttf') format('truetype');
+//   font-weight: double;
+// }
+
+
+// @font-face {
+//   font-family: "miamagon";
+//   src: font-url('miamagon/miamagon.otf') format('truetype');
+//   font-weight: normal;
+// }
+
  $my-body-font: "chocolate_covered_raindrops";
-
-@font-face {
-  font-family: "miamagon";
-  src: font-url('miamagon/miamagon.otf') format('truetype');
-  font-weight: normal;
-}
-
- $my-headers-font: "miamagon";
-
-// font-url('Avenir/AvenirBold.eot?#iefix') format('embedded-opentype'),
+ $my-headers-font: "chocolate_covered_raindrops";
 
 // // Define fonts for body and headers
 $body-font: $my-body-font;
