@@ -1,0 +1,75 @@
+.description {
+  width: 100%;
+    h4 {
+    padding-top :60px;
+
+  }
+}
+
+.packaging-button {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.packaging-name {
+}
+
+.trashes {
+  border: 1px solid black;
+  flex: 0 0 30%;
+  display: flex;
+}
+
+.trash {
+  border: 1px solid black;
+  margin: 3px;
+}
+
+// Form design
+.form-post {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #666666;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+  }
+}
+
+// Checkboxes design
+.category-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-choice {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: $brand-primary;
+  color: white;
+  opacity: 1;
+  }
+}

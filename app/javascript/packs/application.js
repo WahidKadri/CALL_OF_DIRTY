@@ -1,6 +1,12 @@
 import "bootstrap";
 import Quagga from 'quagga'; // ES6
 
+$(document).ready(function(){
+  $(".category-choice").click(function(){
+    $(this).toggleClass("active");
+  });
+});
+
 Quagga.init({
   inputStream : {
     name : "Live",
@@ -26,3 +32,5 @@ Quagga.onDetected(function(result) {
   form.submit();
   Quagga.stop()
 });
+
+

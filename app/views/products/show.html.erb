@@ -1,17 +1,52 @@
-<h2><%= @product.name %> <%= @product.brand %></h2>
-<p><%= @product.description %></p>
+<%= render 'shared/vertical_navigation' %>
 
 
-<%= image_tag(@product.photo) %>
 
-<% @product.packagings.each do |packaging| %>
-  <% if packaging.bin.color == "vert" %>
-    <h3><%= packaging.name %></h3>
-    <p> <strong>A jeter</strong> => dans poubelle à couvercle <%= packaging.bin.color %></p>
-  <% else %>
-    <h3><%= packaging.name %></h3>
-    <p> <strong>A recycler </strong> => dans poubelle à couvercle <%= packaging.bin.color %></p>
+
+
+<div class="description">
+  <h4><%= @product.name %> <%= @product.brand %></h4>
+    <%= image_tag(@product.photo) %>
+</div>
+<span> <strong>Dans quelle poubelle faut t'il mettre ce déchet ?</strong></span>
+
+
+<%= simple_form_for bin_game_new_path do |f| %>
+  <% @product.packagings.each do |p| %>
+
+    <%#= f.input "#{p.name}",  :as => :radio_buttons, collection: Bin.all.pluck(:color)  %>
+
+  <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
+
+    <ul class="list-inline text-center">
+
+
+<li> <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><div class="trash yellow">
+        <i class="fas fa-trash-alt"></i>
+        <p>à recycler: benne de tri</p>
+      </div></label></div></li>
+<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">      <div class="trash green">
+        <i class="fas fa-trash-alt"></i>
+        <p>à recycler: benne à verre</p>
+      </div></label></div></li>
+<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">      <div class="trash white">
+        <%= image_tag "trashflies.png", height:'50vh' %>
+        <p>à jeter: benne à ordures</p>
+      </div></label></div>
+</li>
+
+
+
+
+
+</ul>
+  </fieldset>
+
+
+
+
   <% end %>
+        <%= f.submit "Répondre" %>
 <% end %>
 
 
