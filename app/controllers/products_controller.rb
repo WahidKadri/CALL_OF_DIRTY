@@ -56,6 +56,19 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def game_new
+    @product = Product.find(params[:id])
+    @packagings = Packaging.where(product: @product)
+    @bin_quizz = Bin.new
+    render :show
+  end
+
+  def game
+    raise
+    redirect_to scans_path
+    # bin.color == bin_quizz.color
+  end
+
   def get_product_info(bar_code)
     url = "https://fr.openfoodfacts.org/api/v0/produit/'#{bar_code}'.json"
     product_serialized = open(url).read
