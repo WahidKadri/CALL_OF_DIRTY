@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
   end
 
   def game
-    raise
+    # raise
     redirect_to scans_path
     # bin.color == bin_quizz.color
   end

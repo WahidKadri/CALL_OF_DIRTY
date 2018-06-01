@@ -6,6 +6,7 @@
   padding: 2px 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px black;
+  opacity: 0.7;
   .fas {
     margin-top: 10px;
     color: white;
@@ -14,7 +15,13 @@
     font-size: 20px;
     line-height: 0.8em;
   }
+
+  &:hover {
+    opacity: 1;
+  }
 }
+
+
 
 .white {
   background-color: lightgrey;
