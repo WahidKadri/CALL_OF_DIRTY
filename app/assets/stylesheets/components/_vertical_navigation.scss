@@ -104,6 +104,13 @@ nav .fa {
   stroke-linecap: round;
 }
 
+#btn-burger.open svg {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linecap: round;
+}
+
 #btn-burger .top, #btn-burger .middle, #btn-burger .bottom {
   transition: 0.8s cubic-bezier(.53,.05,.49,1.09);
 }
