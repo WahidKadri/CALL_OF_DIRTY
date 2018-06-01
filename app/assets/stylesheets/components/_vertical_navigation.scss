@@ -8,6 +8,11 @@ body.open {
 }
 
 /*NAVIGATION*/
+h3 {
+  padding-left: 40px;
+  margin-top: -38px;
+}
+
 h4 {
   padding-top: 135px;
   padding-left: 50px;
@@ -56,8 +61,12 @@ nav .fa {
   color: #555;
 }
 
+#logo-icon {
+  margin-top: 40px;
+  margin-left: 136px;
+}
+
 .logo {
-  margin-top: 108px;
   margin-left: 63px;
 }
 
@@ -95,6 +104,13 @@ nav .fa {
   stroke-linecap: round;
 }
 
+#btn-burger.open svg {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linecap: round;
+}
+
 #btn-burger .top, #btn-burger .middle, #btn-burger .bottom {
   transition: 0.8s cubic-bezier(.53,.05,.49,1.09);
 }
@@ -128,6 +144,7 @@ nav .fa {
 
 /*CONTENU*/
 main {
+  // transform: translateX(0);
   transition: transform 0.5s ease-in-out;
   padding: 80px 50px 0 30px;
 }

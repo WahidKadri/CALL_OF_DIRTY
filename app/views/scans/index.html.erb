@@ -1,20 +1,59 @@
 <%= render 'shared/vertical_navigation' %>
 
-
-<h3 class="text-right">Mes scans</h3>
-<% @scans.each do |scan| %>
-<div class="container-card" >
-  <div class="flex">
-    <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+<main class="temp">
+  <h3 class="text-center">MES SCANS</h3>
+  <% @scans.each do |scan| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container-card" >
+          <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+          <p>scanné le <%= scan.created_at.strftime('%D') %></p>
+          <div class="navigation">
+            <h2><%= scan.product.brand %></h2>
+            <p><%= scan.product.name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="navigation">
-    <strong> <%= scan.product.brand %> </strong>
-    <%= scan.product.name %>
-    <br>
- <em> <span>scanné le <%= scan.created_at.strftime('%D') %></span></em>
-  </div>
-</div>
   <% end %>
-
+</main>
 <div class="background-card">
 </div>
+
+<div class="text-center">
+    <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan' %>
+</div>
+
+
+
+
+<!-- <main>
+  <h3 class="text-center">MES SCANS</h3>
+  <% @scans.each do |scan| %>
+    <ul class="list-unstyled">
+      <li>
+        <ul class="list-inline">
+          <li>
+            <div class="container-card" >
+              <div class="flex">
+                <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+              </div>
+              <em><span>scanné le <%= scan.created_at.strftime('%D') %></span></em>
+            </div>
+          </li>
+          <li>
+            <div class="navigation">
+              <p><strong><%= scan.product.brand %></strong></p>
+              <p><%= scan.product.name %></p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  <% end %>
+</main>
+<div class="background-card">
+</div>
+ -->

@@ -5,16 +5,19 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
-          <img src="http://via.placeholder.com/150x200">
+          <div class="background">
+          </div>
+          <%= image_tag "Avatar1.png", height:'200', width:'150' %>
         </div>
         <div class="col-xs-6 badges">
-          <img src="http://via.placeholder.com/60x60">
+          <%= image_tag "Badge_applause.png", height:'60', width:'60' %>
+          <!-- <span>Yes I scan</span> -->
         </div>
         <div class="col-xs-6 badges">
-          <img src="http://via.placeholder.com/60x60">
+          <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>
         </div>
         <div class="col-xs-6 badges">
-          <img src="http://via.placeholder.com/60x60">
+          <%= image_tag "Badge_paparazzi.png", height:'60', width:'60' %>
         </div>
       </div>
       <div class="row">
@@ -25,6 +28,6 @@
     </div>
   </main>
   <div class="text-center">
-    <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan'  %>
+      <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan' %>
   </div>
 </div>
