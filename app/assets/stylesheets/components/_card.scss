@@ -1,3 +1,8 @@
+.temp {
+  margin-left: 0;
+}
+
+
 .background-card {
   background-image: image-url('backgroundCOD.jpg');
   background-size: cover;
@@ -9,41 +14,52 @@
   position: fixed;
   z-index: -1;
   opacity: 0.3;
-  }
   h1{
     margin-top: 0px;
     color: black;
   }
+}
 
-
-
-.container-card{
+.container-card {
   opacity: 1;
   width:200px;
   background:#fff;
   margin:10px auto;
   text-align:center;
-  padding:0 12px 12px 12px;
+  padding: 12px;
   overflow:hidden;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  border-top:12px solid white;
-
-    .picture{
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.30);
+  border-radius: 5px;
+  p {
+    font-family: Helvetica, Arial, Sans-Serif;
+    color: #666F89;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-top: 3px;
+  }
+  .picture{
     top:0;
     width:100%;
     height:145px;
     background-color: grey;
     background-repeat: no-repeat;
     background-position: center center;
-
     }
 }
 
-.flex {
-    opacity: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.navigation {
+  text-align: left;
+  p {
+  font-size: 13px;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
 }
