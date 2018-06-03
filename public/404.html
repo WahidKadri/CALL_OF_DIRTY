@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
 
@@ -33,7 +34,7 @@
      }
 
      html {
-         font-size: 16px;
+         font-size: 24px;
          line-height: 24px;
          width:100%;
          height:100%;
@@ -74,8 +75,8 @@
   .plain.error-page-wrapper {
     font-family: 'Source Sans Pro', sans-serif;
     background-color:#6355bc;
-    padding:0 5%;
-    position:relative;
+    /*padding:0 5%;
+    position:relative;*/
   }
 
   .plain.error-page-wrapper .content-container {
@@ -84,7 +85,7 @@
     -ms-transition: left .5s ease-out, opacity .5s ease-out;
     -o-transition: left .5s ease-out, opacity .5s ease-out;
     transition: left .5s ease-out, opacity .5s ease-out;
-    max-width:400px;
+    /*max-width:400px;*/
     position:relative;
     left:-30px;
     opacity:0;
@@ -96,24 +97,28 @@
   }
 
   .plain.error-page-wrapper .head-line {
+    margin-left: 6vh;
+    padding-bottom: 1vh;
     transition: color .2s linear;
-    font-size:48px;
+    font-size:7vh;
     line-height:60px;
     color:rgba(255,255,255,.2);
     letter-spacing: -1px;
     margin-bottom: 5px;
   }
   .plain.error-page-wrapper .subheader {
+    width: 500px;
     transition: color .2s linear;
-    font-size:36px;
+    font-size:48px;
     line-height:46px;
     color:#fff;
   }
+
   .plain.error-page-wrapper hr {
     height:1px;
     background-color: rgba(255,255,255,.2);
     border:none;
-    width:250px;
+    width:500px;
     margin:35px 0;
   }
   .plain.error-page-wrapper .context {
@@ -124,17 +129,21 @@
   }
   .plain.error-page-wrapper .context p {
     margin:0;
+    width: 500px;
+    font-size: 32px;
+    line-height: 40px;
   }
   .plain.error-page-wrapper .context p:nth-child(n+2) {
     margin-top:12px;
   }
   .plain.error-page-wrapper .buttons-container {
     margin-top: 45px;
+    margin-left: 10vh;
     overflow: hidden;
   }
   .plain.error-page-wrapper .buttons-container a {
     transition: color .2s linear, border-color .2s linear;
-    font-size:14px;
+    font-size:28px;
     text-transform: uppercase;
     text-decoration: none;
     color:#fff;
@@ -148,7 +157,7 @@
     background-color:rgba(255,255,255,.05);
   }
   .plain.error-page-wrapper .buttons-container a:first-child {
-    margin-right:25px;
+    margin-right:75px;
   }
 
   @media screen and (max-width: 485px) {
@@ -160,7 +169,7 @@
       line-height:38px;
      }
     .plain.error-page-wrapper hr {
-      width:185px;
+      /*width:185px;*/
       margin:25px 0;
      }
 
@@ -192,24 +201,15 @@
 
 
     .primary-text-color {
-      color: rgba(228, 230, 235, 1) !important;
+      color: rgba(228, 225, 196, 1) !important;
     }
 
     .secondary-text-color {
       color: rgba(20, 204, 60, 1) !important;
     }
 
-    .sign-text-color {
-      color: #FFBA00 !important;
-    }
 
-    .sign-frame-color {
-      color: #343C3F;
-    }
 
-    .pane {
-      background-color: #FFFFFF !important;
-    }
 
     .border-button {
       color: rgba(20, 204, 60, 1) !important;
@@ -217,40 +217,58 @@
     }
     .button {
       background-color: rgba(20, 204, 60, 1) !important;
-      color: #FFFFFF !important;
+      color:  !important;
     }
 
-    .shadow {
-      box-shadow: 0 0 60px #000000;
-    }
 
 </style>
 
   </head>
   <body class="plain error-page-wrapper background-color background-image">
-    <div class="content-container">
-	<div class="head-line secondary-text-color">
-    <img src="images/bar_code.png" alt="code barre">
-		4<img src="/images/404.png" alt="trash icon" height="40" width="40">4
-	</div>
-	<div class="subheader primary-text-color">
-		Oops, il semble que vous vous soyez égarés,<br>
-		looking for does not exist.
-	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		<!-- doesn't use context_content because it's ALWAYS the same thing -->
-    <p>
-      You may want to head back to the homepage.<br />
-      If you think something is broken, report a problem.
-    </p>
-	</div>
-	<div class="buttons-container">
-		<a class="border-button" href="https://www.callofdirty.fun" target="_blank">Retour aux scans</a>
-		<a class="border-button" href="mailto:contact@callofdirty.fu" target="_blank">Report A Problem</a>
-	</div>
-</div>
+      <div class="content-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+              <div class="head-line secondary-text-color">
+                4<img src="/images/404.png" alt="trash icone" height="120" width="120">4
+              </div>
+            </div>
+            <div class="col-xs-12 col">
+              <img src="/images/bar_code.png" alt="code barre" id="code-barre">
+            </div>
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="subheader primary-text-color text-center">
+                  Oops désolé...
+                  <br>
+                  il semble que la page que vous recherchez n'existe pas.
+                </div>
+                <hr>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3">
+              <div class="clearfix"></div>
+              <div class="context primary-text-color text-center">
+                <!-- doesn't use context_content because it's ALWAYS the same thing -->
+                <p>
+                  Vous préférez surement retourner jouer les "serial scanners" !<br />
+                  Si vous pensez qu'un lien est cassé, signalez le nous.
+                </p>
+              </div>
+            </div>
+            <!-- <div class="col-xs-12"> -->
+            <!-- </div> -->
+          </div>
+        </div>
+        <ul class="list-inline text-centert">
+          <div class="buttons-container">
+            <li>
+              <a class="border-button" href="https://www.callofdirty.fun/">Retour aux scans</a>
+            </li>
+            <li>
+              <a class="border-button" href="mailto:contact@callofdirty.fun" target="_blank">Signaler un problème</a>
+            </li>
+          </div>
+        </ul>
+      </div>
 
 
     <script>
@@ -338,7 +356,7 @@
        var url = ''
          , self = this;
 
-       if (pageType == '503') {
+       if (pageType == '500') {
          url = pageUrl + '/api/v2/status.json';
        }
        else {
@@ -369,10 +387,10 @@
 
 
       <!-- OneTrust Cookies Consent Notice (statuspage.io, en-GB) start -->
-  <script src="https://cdn.cookielaw.org/consent/0800f092-2124-46ec-b11d-b4f48b677302.js" type="text/javascript" charset="UTF-8"></script>
+ <!--  <script src="https://cdn.cookielaw.org/consent/0800f092-2124-46ec-b11d-b4f48b677302.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
     function OptanonWrapper() { }
-  </script>
+  </script> -->
   <!-- OneTrust Cookies Consent Notice (statuspage.io, en-GB) end -->
 
   </body>
