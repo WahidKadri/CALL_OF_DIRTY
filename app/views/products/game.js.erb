@@ -1,0 +1,10 @@
+showModal();
+
+const result = document.getElementById("result");
+
+<% @binsquizz.each do |packaging, bin_id|%>
+
+   result.insertAdjacentHTML("beforeend", "<p> your answer : <%= bin_id %> <%= @product.packagings.find_by(name: packaging).bin.id %>  </p>")
+
+<% end %>
+

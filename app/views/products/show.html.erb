@@ -7,7 +7,7 @@
 <span> <strong>Dans quelle poubelle faut t'il mettre ce déchet ?</strong></span>
 
 
-<%= simple_form_for bin_game_new_path do |f| %>
+<%= simple_form_for bin_game_new_path, remote: true do |f| %>
   <% @product.packagings.each do |p| %>
 
     <%#= f.input "#{p.name}",  :as => :radio_buttons, collection: Bin.all.pluck(:color)  %>
@@ -17,15 +17,15 @@
     <ul class="list-inline text-center">
 
 
-<li> <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><div class="trash yellow">
+<li> <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="1" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><div class="trash yellow">
         <i class="fas fa-trash-alt"></i>
         <p>à recycler: benne de tri</p>
       </div></label></div></li>
-<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">      <div class="trash green">
+<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="2" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">      <div class="trash green">
         <i class="fas fa-trash-alt"></i>
         <p>à recycler: benne à verre</p>
       </div></label></div></li>
-<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">      <div class="trash white">
+<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="3" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">      <div class="trash white">
         <%= image_tag "trashflies.png", height:'50vh' %>
         <p>à jeter: benne à ordures</p>
       </div></label></div>
@@ -43,9 +43,39 @@
 
   <% end %>
   <div class="text-center">
-        <%= f.submit "Répondre", class:'btn btn-success btn-quizz' %>
+        <%= f.submit "Répondre" ,class:'btn btn-success btn-quizz' %>
         </div>
 <% end %>
 
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Les réponses</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      <div id="result"></div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
