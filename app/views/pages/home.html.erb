@@ -10,7 +10,7 @@
         </div>
         <div class="col-xs-6 badges">
           <%= image_tag "Badge_applause.png", height:'60', width:'60' %>Applause
-          <!-- <span>Yes I scan</span> -->
+         <%= UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%= Badge.find(1).level %></p>
         </div>
         <div class="col-xs-6 badges">
           <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>Diplomé
