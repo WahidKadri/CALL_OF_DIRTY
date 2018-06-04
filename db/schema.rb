@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_130638) do
+ActiveRecord::Schema.define(version: 2018_06_04_110936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bins", force: :cascade do |t|
     t.string "color"
@@ -51,6 +58,16 @@ ActiveRecord::Schema.define(version: 2018_05_30_130638) do
     t.index ["user_id"], name: "index_scans_on_user_id"
   end
 
+  create_table "user_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "point", default: 0, null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -71,6 +88,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_130638) do
     t.string "last_name"
     t.string "token"
     t.datetime "token_expiry"
+    t.integer "score", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -79,4 +97,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_130638) do
   add_foreign_key "packagings", "products"
   add_foreign_key "scans", "products"
   add_foreign_key "scans", "users"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

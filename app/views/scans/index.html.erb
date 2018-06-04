@@ -1,7 +1,7 @@
 <%= render 'shared/vertical_navigation' %>
 
 <main class="temp">
-  <h3 class="text-center">MES SCANS</h3>
+  <h3 class="text-center">Mes Scans</h3>
   <% @scans.each do |scan| %>
     <div class="container">
       <div class="row">
@@ -61,12 +61,8 @@
 <div class="background-card">
 </div>
 
-<div class="text-center">
-    <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan' %>
+<div class="">
+    <%= link_to scan_product_path, class:'btn btn-success btn-scan btn-scan-fixe' do %>
+      <i class="fas fa-barcode"> <!-- Scan --></i>
+    <% end %>
 </div>
-
-
-
-
-
-
