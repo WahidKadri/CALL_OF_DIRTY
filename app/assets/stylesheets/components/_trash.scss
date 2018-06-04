@@ -1,11 +1,11 @@
 .trash {
   text-shadow: 1px 1px 3px black;
-  background-color: blue;
   height: 15vh;
   width: 15vh;
   padding: 2px 5px;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px black;
+  border: none;
+  // box-shadow: 1px 1px 3px black;
   opacity: 0.7;
   .fas {
     margin-top: 10px;
@@ -32,20 +32,33 @@
 }
 
 .yellow {
-  background-color: #FFCD34;
+  // background-color: #FFCD34;
   p {
     color: black;
     text-shadow: none;
+  }
+  img {
+    border: 3px solid #FFCD34;
+    border-radius: 50%;
   }
 }
 
 
 .green {
-  background-color: #022601;
+  // background-color: #022601;
   p {
-    color: white;
+    color: black;
     text-shadow: none;
   }
+  img {
+    border: 3px solid #21AA26;
+    border-radius: 50%;
+  }
+}
+
+.circle-border img {
+  border: 3px solid black;
+  border-radius: 50%;
 }
 
 .trash-choice {

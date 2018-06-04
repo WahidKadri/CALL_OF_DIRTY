@@ -3,20 +3,59 @@
 <main class="temp">
   <h3 class="text-center">Mes Scans</h3>
   <% @scans.each do |scan| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="container-card" >
-          <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
-          <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
-          <div class="navigation">
-            <h2><%= scan.product.brand %></h2>
-            <p><%= scan.product.name %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="container-card" data-target="#modal-scan-<%= scan.id %>" data-toggle="modal" >
+            <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+            <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
+            <div class="navigation">
+              <h2><%= scan.product.brand %></h2>
+              <p><%= scan.product.name %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal-scan-<%= scan.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Les réponses</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= image_tag "#{scan.product.photo}" %>
+              <h2><%= scan.product.brand %></h2>
+              <p><%= scan.product.name %></p>
+              <% scan.product.packagings.each do |packaging| %>
+                <p><%= packaging.name %></p>
+                <% if packaging.bin.color == "blanc" %>
+                  <div class ="circle-border">
+                    <%= image_tag "green_trash.png", height:'50vh' %>
+                    <p>à recycler: benne à verre</p>
+                  </div>
+                <% elsif packaging.bin.color == "jaune" %>
+                  <div class ="circle-border">
+                    <%= image_tag "yellow_trash.png", class:'circle-border', height:'50vh' %>
+                    <p>à recycler: benne de tri</p>
+                  </div>
+                <% else %>
+                  <div class ="circle-border">
+                    <%= image_tag "trashflies.png", class:'circle-border', height:'50vh' %>
+                    <p>à jeter: benne à ordures</p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   <% end %>
 </main>
 <div class="background-card">
