@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
     else
       UserBadge.create(user: current_user, badge: Badge.find(1), point: 1)
     end
-     # controle_badge
+    controle_badge
 
   end
 
@@ -104,7 +104,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @binsquizz = params["/products/#{@product.id}"]
     @product.packagings.each do |packaging|
-      if @binsquizz["#{packaging.name}"].to_i == packaging.bin.id
+      if @binsquizz["#{packaging.name}"] == packaging.bin.color
         @point_game += 1
       end
     end
@@ -118,6 +118,7 @@ class ProductsController < ApplicationController
     else
       UserBadge.create(user: current_user, badge: Badge.find(2), point: @point_game)
     end
+    controle_badge
   end
 
   def game_solution

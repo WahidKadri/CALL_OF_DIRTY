@@ -15,7 +15,7 @@
     <ul class="list-inline text-center">
       <li>
         <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="1" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
             <div class="trash yellow">
               <%= image_tag "yellow_trash.png", height:'50vh' %>
@@ -27,7 +27,7 @@
 
       <li>
         <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="2" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
             <div class="trash green">
               <%= image_tag "green_trash.png", height:'50vh' %>
@@ -39,7 +39,7 @@
 
       <li>
         <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="3" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
             <div class="trash white">
               <%= image_tag "trashflies.png", height:'50vh' %>
