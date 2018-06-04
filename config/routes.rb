@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get 'products/scan', to: 'products#scan', as: :scan_product
     get 'products/:id', to: 'products#game_new', as: :bin_game_new
     post 'products/:id', to: 'products#game', as: :bin_game
+    # get 'products/:id/solution', to: 'products#game_solution', as: :bin_game_solution
+
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :scans, only: [:index]

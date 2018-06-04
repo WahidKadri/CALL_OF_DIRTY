@@ -1,5 +1,9 @@
 import "bootstrap";
+// import "modal";
+import {showModal} from "../components/show_modal.js";
 import Quagga from 'quagga'; // ES6
+
+global.showModal = showModal;
 
 $(document).ready(function(){
   $(".category-choice").click(function(){

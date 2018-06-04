@@ -40,8 +40,44 @@ class ProductsController < ApplicationController
       end
     end
     Scan.create(user: current_user, product: @product_scan)
+    add_point_badge_scan
+
     redirect_to product_path(@product_scan)
   end
+
+  def add_point_badge_scan
+    # 2 badges
+    # 2eme badge = paparrazzi
+    @user_badge = UserBadge.where(user: current_user, badge: Badge.find(3)).first
+    if @user_badge
+      @user_badge.point += 1
+      @user_badge.save
+    else
+      UserBadge.create(user: current_user, badge: Badge.find(3), point: 1)
+    end
+
+    @user_badge = UserBadge.where(user: current_user, badge: Badge.find(1)).first
+    if @user_badge
+      @user_badge.point += 1
+      @user_badge.save
+    else
+      UserBadge.create(user: current_user, badge: Badge.find(1), point: 1)
+    end
+     # controle_badge
+
+  end
+
+  def controle_badge
+    badges_to_controle = UserBadge.where(user: current_user)
+    badges_to_controle.each do |user_badge|
+      if user_badge.point > Badge.find_by(title: user_badge.badge.title).level
+       # a =  UserBadge.find_by(badge: user_badge)
+       user_badge.point = Badge.find_by(title: user_badge.badge.title).level
+       user_badge.save
+      end
+    end
+  end
+
 
   def edit
   end
@@ -64,9 +100,28 @@ class ProductsController < ApplicationController
   end
 
   def game
-    # raise
-    redirect_to scans_path
-    # bin.color == bin_quizz.color
+    @point_game = 0
+    @product = Product.find(params[:id])
+    @binsquizz = params["/products/#{@product.id}"]
+    @product.packagings.each do |packaging|
+      if @binsquizz["#{packaging.name}"].to_i == packaging.bin.id
+        @point_game += 1
+      end
+    end
+    current_user.score += @point_game
+    current_user.save
+
+    @user_badge = UserBadge.where(user: current_user, badge: Badge.find(2)).first
+    if @user_badge
+      @user_badge.point += @point_game
+      @user_badge.save
+    else
+      UserBadge.create(user: current_user, badge: Badge.find(2), point: @point_game)
+    end
+  end
+
+  def game_solution
+     @product = Product.find(params[:id])
   end
 
   def get_product_info(bar_code)
