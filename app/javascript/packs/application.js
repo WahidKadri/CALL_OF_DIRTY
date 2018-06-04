@@ -3,6 +3,7 @@ import { addBorderToButton } from "../components/add_border_to_button.js";
 // import "modal";
 import {showModal} from "../components/show_modal.js";
 import Quagga from 'quagga'; // ES6
+addBorderToButton();
 
 addBorderToButton();
 
@@ -39,5 +40,3 @@ $(document).ready(function(){
    form.submit();
    Quagga.stop()
  });
-
-

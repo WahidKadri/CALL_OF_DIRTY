@@ -2,9 +2,9 @@ showModal();
 
 const result = document.getElementById("result");
 
-<% @binsquizz.each do |packaging, bin_id|%>
+<% @binsquizz.each do |packaging, bin_color|%>
 
-   result.insertAdjacentHTML("beforeend", "<p> your answer : <%= bin_id %> <%= @product.packagings.find_by(name: packaging).bin.id %>  </p>")
+   result.insertAdjacentHTML("beforeend", "<p> your answer : <%= bin_color %> <%= @product.packagings.find_by(name: packaging).bin.color %>  </p>")
 
 <% end %>
 
