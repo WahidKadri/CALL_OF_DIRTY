@@ -5,6 +5,8 @@ import {showModal} from "../components/show_modal.js";
 import Quagga from 'quagga'; // ES6
 addBorderToButton();
 
+addBorderToButton();
+
 global.showModal = showModal;
 
 $(document).ready(function(){
@@ -38,6 +40,3 @@ $(document).ready(function(){
    form.submit();
    Quagga.stop()
  });
-
-
-
