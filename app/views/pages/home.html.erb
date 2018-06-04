@@ -3,10 +3,8 @@
 <div>
   <main>
     <div class="container">
-      <div class="row">
+      <div class="row" class="test">
         <div class="col-xs-6">
-          <div class="background">
-          </div>
           <%= image_tag "Avatar1.png", height:'200', width:'150' %>
         </div>
         <div class="col-xs-6 badges">
@@ -21,13 +19,19 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 ranking">
-          <img src="http://via.placeholder.com/290x200">
-        </div>
+      <div class="col-xs-6">
+          <img src="http://via.placeholder.com/130x200">
+      </div>
+      <div class="col-xs-6">
+        <img src="http://via.placeholder.com/130x200">
       </div>
     </div>
-    <div class="text-center">
-        <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan' %>
+
+
+    <div class="flexline">
+        <%= link_to scan_product_path, class:'btn btn-success btn-scan' do %>
+          <i class="fas fa-barcode"> <!-- Scan --></i>
+        <% end %>
     </div>
   </main>
 </div>

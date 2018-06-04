@@ -22,7 +22,8 @@
 <div class="background-card">
 </div>
 
-<div class="text-center">
-    <%= link_to "Scan now", scan_product_path, class:'btn btn-success btn-scan' %>
+<div class="">
+    <%= link_to scan_product_path, class:'btn btn-success btn-scan btn-scan-fixe' do %>
+      <i class="fas fa-barcode"> <!-- Scan --></i>
+    <% end %>
 </div>
-
