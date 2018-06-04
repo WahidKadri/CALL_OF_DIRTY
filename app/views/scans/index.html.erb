@@ -8,7 +8,7 @@
       <div class="col-xs-12">
         <div class="container-card" >
           <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
-          <p>scanné le <%= scan.created_at.strftime('%D') %></p>
+          <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
           <div class="navigation">
             <h2><%= scan.product.brand %></h2>
             <p><%= scan.product.name %></p>
