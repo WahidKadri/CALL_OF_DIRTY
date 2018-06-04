@@ -10,41 +10,51 @@
 <%= simple_form_for bin_game_new_path, remote: true do |f| %>
   <% @product.packagings.each do |p| %>
 
-    <%#= f.input "#{p.name}",  :as => :radio_buttons, collection: Bin.all.pluck(:color)  %>
-
   <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
 
     <ul class="list-inline text-center">
-
-
-<li> <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="1" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune"><div class="trash yellow">
-        <i class="fas fa-trash-alt"></i>
-        <p>à recycler: benne de tri</p>
-      </div></label></div></li>
-<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="2" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">      <div class="trash green">
-        <i class="fas fa-trash-alt"></i>
-        <p>à recycler: benne à verre</p>
-      </div></label></div></li>
-<li>    <div class="form-check"><input class="form-check-input radio_buttons required trash-choice" type="radio" value="3" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert"><label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">      <div class="trash white">
-        <%= image_tag "trashflies.png", height:'50vh' %>
-        <p>à jeter: benne à ordures</p>
-      </div></label></div>
-</li>
-
-
-
-
-
-</ul>
-  </fieldset>
-
-
-
-
-  <% end %>
-  <div class="text-center">
-        <%= f.submit "Répondre" ,class:'btn btn-success btn-quizz' %>
+      <li>
+        <div class="form-check">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="1" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
+          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
+            <div class="trash yellow">
+              <%= image_tag "yellow_trash.png", height:'50vh' %>
+              <p>à recycler: benne de tri</p>
+            </div>
+          </label>
         </div>
+      </li>
+
+      <li>
+        <div class="form-check">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="2" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
+          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
+            <div class="trash green">
+              <%= image_tag "green_trash.png", height:'50vh' %>
+              <p>à recycler: benne à verre</p>
+            </div>
+          </label>
+        </div>
+      </li>
+
+      <li>
+        <div class="form-check">
+          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="3" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
+          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
+            <div class="trash white">
+              <%= image_tag "trashflies.png", height:'50vh' %>
+              <p>à jeter: benne à ordures</p>
+            </div>
+          </label>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+<% end %>
+
+  <div class="text-center">
+    <%= f.submit "Répondre" ,class:'btn btn-success btn-quizz' %>
+  </div>
 <% end %>
 
 
