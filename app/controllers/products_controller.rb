@@ -118,6 +118,7 @@ class ProductsController < ApplicationController
     else
       UserBadge.create(user: current_user, badge: Badge.find(2), point: @point_game)
     end
+    controle_badge
   end
 
   def game_solution

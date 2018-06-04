@@ -14,9 +14,11 @@
         </div>
         <div class="col-xs-6 badges">
           <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>Diplomé
+        <%= UserBadge.find_by(user: current_user, badge_id: 2).point %> / <%= Badge.find(2).level %></p>
         </div>
         <div class="col-xs-6 badges">
           <%= image_tag "Badge_paparazzi.png", height:'60', width:'60' %>Paparazzi
+        <%= UserBadge.find_by(user: current_user, badge_id: 3).point %> / <%= Badge.find(3).level %></p>
         </div>
       </div>
       <div class="row">
