@@ -32,3 +32,21 @@ body {
 .col-xs-6.badges {
   width: 45%;
 }
+
+.grid {
+  display: grid;
+  grid-template-column: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.elementone {
+  grid-row: 7 / span 1;
+  grid-column: 1 / span 5;
+}
+
+.item {
+  position: absolute;
+  top: 20;
+  left: 60vh;
+}
+
