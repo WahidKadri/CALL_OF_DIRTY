@@ -1,10 +1,24 @@
 <%= render 'shared/vertical_navigation' %>
 
-<div class="description">
-  <h4><%= @product.name %> <%= @product.brand %></h4>
-    <%= image_tag(@product.photo) %>
+<div class="big-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container-card">
+          <div class="aligne">
+            <%= image_tag(@product.photo, class:'img-product') %>
+            <h4><%= @product.name %> <%= @product.brand %></h4>
+          </div>
+        </div>
+        <!-- <div class="col-xs-9"> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="enonce">
+  <p>Sélectionner la benne de tri la plus adaptée à chaque partie d'emballage.</p>
 </div>
-<span> <strong>Dans quelle poubelle faut t'il mettre ce déchet ?</strong></span>
 
 
 <%= simple_form_for bin_game_new_path, remote: true do |f| %>
@@ -53,9 +67,12 @@
 <% end %>
 
   <div class="text-center">
-    <%= f.submit "Répondre" ,class:'btn btn-success btn-quizz' %>
+    <%= button_tag(type: 'submit', class: " btn btn-success btn-quizz") do %>
+      <i class="fas fa-question"></i>
+    <% end %>
   </div>
 <% end %>
+</div>
 
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static">
