@@ -7,6 +7,15 @@
   height: 50px;
 }
 
+.btn-scan-index {
+  margin-top: 20px;
+  font-size: 25px;
+  padding: 3px 50px;
+  border-radius: 50px;
+  z-index: 10;
+  height: 50px;
+}
+
 .btn-scan-fixe {
   position: fixed;
   bottom: 20px;
@@ -14,6 +23,8 @@
   width: 30%;
   height: 30px;
 }
+
+
 
 .btn-quizz {
   color: white;
