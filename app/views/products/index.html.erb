@@ -1,0 +1,25 @@
+<%= render 'shared/vertical_navigation' %>
+
+<main class="temp">
+    <div class="container">
+      <form action="/products" accept-charset="UTF-8" method="get">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="text" name="query" id="query" class="form-control field-icon" placeholder="&#xF002; Recherche">
+      </form>
+      <% @products.each do |product| %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="container-card" data-target="#modal-scan-<%= product.id %>" data-toggle="modal" >
+            <div class="picture" style="background-image: url('<%= product.photo %>')"></div>
+            <div class="navigation">
+              <h2><%= product.brand %></h2>
+              <p><%= product.name %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</main>
+
+
