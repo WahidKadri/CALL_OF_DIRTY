@@ -152,8 +152,10 @@ class ProductsController < ApplicationController
       })
 
     parsed_eugene_data = JSON.parse(eugene_data_serialized)
-
+    product.source = parsed_eugene_data["source"]
+    product.save
     parsed_eugene_data.slice("recycle", "jette")
+
 
   end
 
