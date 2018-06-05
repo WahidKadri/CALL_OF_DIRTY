@@ -63,3 +63,28 @@
     margin-bottom: 0px;
   }
 }
+
+.podium {
+  // align-items: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  box-shadow: 1px 1px 10px lightgrey;
+  border-radius: 20px;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.ranking {
+  box-shadow: 1px 1px 10px lightgrey;
+  border-radius: 20px;
+  height: 30vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.paddingblock {
+  margin-top: 15px;
+}
+
