@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     # get 'products/:id/solution', to: 'products#game_solution', as: :bin_game_solution
 
 
-  resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :scans, only: [:index]
 
 end
