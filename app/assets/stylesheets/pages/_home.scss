@@ -18,7 +18,6 @@ body {
   opacity: 1;
 }
 
-
 .flexline {
   display: flex;
   align-items: center;
@@ -26,10 +25,8 @@ body {
   .btn-scan {
   flex: 0 0 auto;
   // font-family: 'chocolate_cover_raindrops';
-
   }
 }
-
 
 .item {
   position: absolute;
@@ -37,6 +34,15 @@ body {
   left: 60vh;
 }
 
+.podium-position {
+  box-shadow: 1px 1px 3px black;
+  border-radius: 5px;
+  padding: 0 2px;
+  p {
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 12px;
+  }
+  
 .backgradiant {
   background-image: linear-gradient(to right top, #03bfff, #00d7ff, #00ebe1, #00f996, #49ff00);
   background-size: cover;
