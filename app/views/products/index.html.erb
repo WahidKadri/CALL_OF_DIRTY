@@ -7,7 +7,6 @@
         <input type="text" name="query" id="query" class="form-control field-icon" placeholder="&#xF002; Recherche">
       </form>
       <% @products.each do |product| %>
-      <div class="row">
         <div class="col-xs-12">
           <div class="container-card" data-target="#modal-scan-<%= product.id %>" data-toggle="modal" >
             <div class="picture" style="background-image: url('<%= product.photo %>')"></div>
@@ -18,8 +17,9 @@
           </div>
         </div>
       <% end %>
-      </div>
   </div>
 </main>
+<div class="background-card">
+</div>
 
 

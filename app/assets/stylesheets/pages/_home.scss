@@ -42,6 +42,18 @@ body {
     font-family: Helvetica, Arial, Sans-Serif;
     font-size: 12px;
   }
+  
+.backgradiant {
+  background-image: linear-gradient(to right top, #03bfff, #00d7ff, #00ebe1, #00f996, #49ff00);
+  background-size: cover;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 
