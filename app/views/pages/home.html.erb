@@ -4,44 +4,51 @@
   <main>
   <h3 class="text-center">Mon Dashboard</h3>
     <div class="container">
-      <div class="row" class="test">
-        <div class="col-xs-6">
-          <%= image_tag "Avatar1.png", height:'200', width:'150' %>
+      <div class="row">
+        <div class="col-xs-5">
+          <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
         </div>
-
-        <div class="col-xs-6 badges">
-          <%= image_tag "Badge_applause.png", height:'60', width:'60' %>Applause
-          <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
-            <%= UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%= Badge.find(1).level %>
-          <% else %>
-            <%= 0 %> / <%= Badge.find(1).level %></p>
-         <% end %>
+        <div class="col-xs-7">
+          <div class="badges">
+            <%= image_tag "Badge_applause.png", height:'60', width:'60' %>
+            <div>
+              Yes i scan
+              <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
+                <%= UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%= Badge.find(1).level %>
+              <% else %>
+                <%= 0 %> / <%= Badge.find(1).level %>
+             <% end %>
+            </div>
+          </div>
+          <div class="badges">
+            <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>
+            <div>
+              Diplomé
+              <% if !UserBadge.find_by(user: current_user, badge_id: 2).nil? %>
+                <%= UserBadge.find_by(user: current_user, badge_id: 2).point %> / <%= Badge.find(2).level %>
+              <% else %>
+                <%= 0 %> / <%= Badge.find(2).level %>
+             <% end %>
+            </div>
+          </div>
+          <div class="badges">
+            <%= image_tag "Badge_paparazzi.png", height:'60', width:'60' %>
+          <div>
+              Paparazzi
+              <% if !UserBadge.find_by(user: current_user, badge_id: 3).nil? %>
+                <%= UserBadge.find_by(user: current_user, badge_id: 3).point %> / <%= Badge.find(3).level %>
+              <% else %>
+                <%= 0 %> / <%= Badge.find(3).level %>
+             <% end %>
+           </div>
+          </div>
         </div>
-
-        <div class="col-xs-6 badges">
-          <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>Diplomé
-          <% if !UserBadge.find_by(user: current_user, badge_id: 2).nil? %>
-            <%= UserBadge.find_by(user: current_user, badge_id: 2).point %> / <%= Badge.find(2).level %>
-          <% else %>
-            <%= 0 %> / <%= Badge.find(2).level %></p>
-         <% end %>
-        </div>
-
-        <div class="col-xs-6 badges">
-          <%= image_tag "Badge_paparazzi.png", height:'60', width:'60' %>Paparazzi
-          <% if !UserBadge.find_by(user: current_user, badge_id: 3).nil? %>
-            <%= UserBadge.find_by(user: current_user, badge_id: 3).point %> / <%= Badge.find(3).level %>
-          <% else %>
-            <%= 0 %> / <%= Badge.find(3).level %></p>
-         <% end %>
-        </div>
-
       </div>
       <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-5">
           <img src="http://via.placeholder.com/130x200">
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-7">
         <img src="http://via.placeholder.com/130x200">
       </div>
     </div>
@@ -49,7 +56,11 @@
 
     <div class="flexline">
         <%= link_to scan_product_path, class:'btn btn-success btn-scan' do %>
-          <i class="fas fa-barcode"> <!-- Scan --></i>
+        <%= image_tag "barcode.png", height:'30', width:'auto' %>
+
+
+
+
         <% end %>
     </div>
   </main>
