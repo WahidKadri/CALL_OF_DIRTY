@@ -1,0 +1,39 @@
+  <div class="row aligne">
+    <div class="col-xs-3 solution"> <p><%= packaging %></p></div>
+    <div class="col-xs-3 solution"> <p>
+
+      <% if bin_color == "jaune" %>
+        <%= image_tag "yellow_trash.png", height:'50vh' %>
+      <% elsif bin_color == "blanc" %>
+        <%= image_tag "green_trash.png", height:'50vh' %>
+      <% else %>
+        <%= image_tag "garbage_trash.png", height:'50vh' %>
+      <% end %>
+
+      </p>
+    </div>
+
+    <div class="col-xs-3 solution circle-border"> <p>
+
+      <% if product.packagings.find_by(name: packaging).bin.color == "jaune" %>
+        <%= image_tag "yellow_trash.png", height:'50vh' %>
+      <% elsif product.packagings.find_by(name: packaging).bin.color == "blanc" %>
+        <%= image_tag "green_trash.png", height:'50vh' %>
+      <% else %>
+        <%= image_tag "garbage_trash.png", height:'50vh' %>
+      <% end %>
+
+    </p>
+    </div>
+
+
+    <div class="col-xs-3 solution">
+      <% if product.packagings.find_by(name: packaging).bin.color == bin_color %>
+        <p class="green-point"><strong>+1</strong></p>
+      <% else %>
+        <p>-</p>
+      <% end %>
+    </div>
+    </div>
+
+</div>
