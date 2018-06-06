@@ -13,14 +13,16 @@
 
 
 
-.white {
+.green {
   p {
     color: black;
     text-shadow: none;
   }
   img {
-    border: 3px solid #9D9A8B;
-    border-radius: 50%;
+    // border: 3px solid #9D9A8B;
+    // border-radius: 50%;
+    border-top: none;
+    padding-top: 3px;
     opacity: 0.8;
     transform: scale(1);
     transition: all 0.7s ease-in-out;
@@ -33,8 +35,10 @@
     text-shadow: none;
   }
   img {
-    border: 3px solid #FFCD34;
-    border-radius: 50%;
+    // border: 3px solid #FFCD34;
+    // border-radius: 50%;
+    border-top: none;
+    padding-top: 3px;
     opacity: 0.8;
     transform: scale(1);
     transition: all 0.7s ease-in-out;
@@ -42,14 +46,16 @@
 }
 
 
-.green {
+.white {
   p {
     color: black;
     text-shadow: none;
   }
   img {
-    border: 3px solid #21AA26;
-    border-radius: 50%;
+    // border: 3px solid #21AA26;
+    // border-radius: 50%;
+    border-top: none;
+    padding-top: 3px;
     opacity: 0.8;
     transform: scale(1);
     transition: all 0.7s ease-in-out;
@@ -57,8 +63,9 @@
 }
 
 .circle-border img {
-  border: 3px solid black;
-  border-radius: 50%;
+  // border: 3px solid black;
+  // border-radius: 50%;
+  border-top: 2px solid #278F75;
   opacity: 1;
   transform: scale(1.1);
   transition: all 0.7s ease-in-out;
@@ -66,4 +73,10 @@
 
 .trash-choice {
 display: none;
+}
+
+.form-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
