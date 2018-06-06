@@ -27,18 +27,18 @@
                 <p><%= packaging.name %></p>
                 <% if packaging.bin.color == "blanc" %>
                   <div class ="circle-border">
-                    <%= image_tag "green_trash.png", height:'50vh' %>
-                    <p>à recycler: benne à verre</p>
+                    <%= image_tag "white_trash.png", height:'50vh' %>
+                    <p><i class="fas fa-recycle"></i> verre</p>
                   </div>
                 <% elsif packaging.bin.color == "jaune" %>
                   <div class ="circle-border">
-                    <%= image_tag "yellow_trash.png", class:'circle-border', height:'50vh' %>
-                    <p>à recycler: benne de tri</p>
+                    <%= image_tag "yellow_trash2.png", class:'circle-border', height:'50vh' %>
+                    <p><i class="fas fa-recycle"></i> papier, carton, plastique, métaux</p>
                   </div>
                 <% else %>
                   <div class ="circle-border">
-                    <%= image_tag "garbage_trash.png", class:'circle-border', height:'50vh' %>
-                    <p>à jeter: benne à ordures</p>
+                    <%= image_tag "green_trash2.png", class:'circle-border', height:'50vh' %>
+                    <p><i class="fas fa-trash-alt"></i> poubelle</p>
                   </div>
                 <% end %>
               <% end %>
