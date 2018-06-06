@@ -4,7 +4,8 @@
 
 
 .background-card {
-  background-image: image-url('backgroundCOD.jpg');
+  // background-image: image-url('backgroundCOD.jpg');
+  background: linear-gradient(#3EB9CC, #456FBB);
   background-size: cover;
   height: 100%;
   top: 0;
@@ -22,14 +23,14 @@
 
 .container-card {
   opacity: 1;
-  width:100%;
   background:#fff;
-  margin:10px auto;
-  text-align:center;
+  text-align: center;
   padding: 12px;
+  margin: 0 17px 31px 17px;
   overflow:hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 7px;
+  border-radius: 3px;
+  border: 1px solid black;
   p {
     font-family: Helvetica, Arial, Sans-Serif;
     color: #666F89;
@@ -41,14 +42,15 @@
   .picture {
     filter: contrast(125%);
     background-color: #777;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.5), 0px 2px 5px 1px rgba(0, 0, 0, 0.5) inset;
     top: 0;
     width: 100%;
-    height: 145px;
-    background-color: grey;
-    background-repeat: no-repeat;
+    height: 195px;
+    background-size: cover;
     background-position: center center;
+    // -webkit-filter: saturate(2);
+    //  filter: saturate(2);
     }
 }
 

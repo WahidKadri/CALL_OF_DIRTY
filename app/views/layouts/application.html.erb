@@ -48,7 +48,17 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= render 'shared/vertical_navigation' %>
     <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#btn-burger, #mask').on('click', function() {
+          $('nav, main, body, #mask, #btn-burger').toggleClass('open');
+        });
+      });
+    </script>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

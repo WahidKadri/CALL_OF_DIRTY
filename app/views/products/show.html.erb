@@ -1,117 +1,117 @@
-<%= render 'shared/vertical_navigation' %>
-
-<div class="big-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="container-card">
-<!--           <div class="aligne"> -->
-            <%= image_tag(@product.photo, class:'img-product') %>
-            <h4><%= @product.name %> <%= @product.brand %></h4>
-<!--           </div> -->
-        </div>
-        <!-- <div class="col-xs-9"> -->
-        <!-- </div> -->
-      </div>
-    </div>
-  </div>
-  <hr>
-<div class="enonce">
-  <p>Sélectionner la benne de tri la plus adaptée à chaque partie d'emballage.</p>
-</div>
-
-
-<%= simple_form_for bin_game_new_path, remote: true do |f| %>
-  <% @product.packagings.each do |p| %>
-
-  <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
-
-    <ul class="list-inline text-center">
-      <li>
-        <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
-          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
-            <div class="trash yellow">
-              <%= image_tag "yellow_trash2.png", height:'50vh' %>
-              <p><!-- <i class="fas fa-recycle"></i> --> papier, carton, plastique, métaux</p>
-            </div>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
-          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
-            <div class="trash green">
-              <%= image_tag "white_trash.png", height:'50vh' %>
-              <p><!-- <i class="fas fa-recycle"> --></i> verre</p>
-            </div>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class="form-check">
-          <input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
-          <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
-            <div class="trash white">
-              <%= image_tag "green_trash2.png", height:'50vh' %>
-              <p><!-- <i class="fas fa-trash-alt"> --></i> poubelle</p>
-            </div>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </fieldset>
-<% end %>
-
-  <div class="text-center">
-    <%= button_tag(type: 'submit', class: " btn btn-success btn-quizz") do %>
-      <i class="fas fa-question"></i>
-    <% end %>
-  </div>
-<% end %>
-</div>
-
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-
-
-
-
-
-        <div class="container">
-
-          <div class="row aligne">
-            <div class="col-xs-3"> <h5><strong>Element d'emballage</strong></h5></div>
-            <div class="col-xs-3"> <h5><strong>Votre réponse</strong></h5></div>
-            <div class="col-xs-3"> <h5><strong>La bonne réponse</strong></h5></div>
-            <div class="col-xs-3"> <h5><strong>Points</strong></h5></div>
+<main>
+  <div class="big-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="container-card">
+  <!--           <div class="aligne"> -->
+              <%= image_tag(@product.photo, class:'img-product') %>
+              <h4><%= @product.name %> <%= @product.brand %></h4>
+  <!--           </div> -->
           </div>
-
-
-           <div id="result"></div>
-
-
-
-
-
-
-
+          <!-- <div class="col-xs-9"> -->
+          <!-- </div> -->
+        </div>
       </div>
-      <div class="modal-footer">
+    </div>
+    <hr>
+  <div class="enonce">
+    <p>Sélectionner la benne de tri la plus adaptée à chaque partie d'emballage.</p>
+  </div>
 
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
-          <i class="fas fa-check"></i>
-        <% end %>
 
+  <%= simple_form_for bin_game_new_path, remote: true do |f| %>
+    <% @product.packagings.each do |p| %>
+
+    <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
+
+      <ul class="list-inline text-center">
+        <li>
+          <div class="form-check">
+            <input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
+            <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
+              <div class="trash yellow">
+                <%= image_tag "yellow_trash2.png", height:'50vh' %>
+                <p><!-- <i class="fas fa-recycle"></i> --> papier, carton, plastique, métaux</p>
+              </div>
+            </label>
+          </div>
+        </li>
+
+        <li>
+          <div class="form-check">
+            <input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
+            <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
+              <div class="trash green">
+                <%= image_tag "white_trash.png", height:'50vh' %>
+                <p><!-- <i class="fas fa-recycle"> --></i> verre</p>
+              </div>
+            </label>
+          </div>
+        </li>
+
+        <li>
+          <div class="form-check">
+            <input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
+            <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
+              <div class="trash white">
+                <%= image_tag "green_trash2.png", height:'50vh' %>
+                <p><!-- <i class="fas fa-trash-alt"> --></i> poubelle</p>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </fieldset>
+  <% end %>
+
+    <div class="text-center">
+      <%= button_tag(type: 'submit', class: " btn btn-success btn-quizz") do %>
+        <i class="fas fa-question"></i>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+
+
+
+
+
+          <div class="container">
+
+            <div class="row aligne">
+              <div class="col-xs-3"> <h5><strong>Element d'emballage</strong></h5></div>
+              <div class="col-xs-3"> <h5><strong>Votre réponse</strong></h5></div>
+              <div class="col-xs-3"> <h5><strong>La bonne réponse</strong></h5></div>
+              <div class="col-xs-3"> <h5><strong>Points</strong></h5></div>
+            </div>
+
+
+             <div id="result"></div>
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
+            <i class="fas fa-check"></i>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 

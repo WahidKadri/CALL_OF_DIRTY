@@ -1,8 +1,3 @@
-<div class="header-home">
-    <%= render 'shared/vertical_navigation' %>
-    <h3 class="text-center">Mon Dashboard</h3>
-</div>
-
 <main>
   <div class="backg">
 
@@ -114,11 +109,7 @@
 
 
     </div>
-    <div class="text-center container-btn">
-      <%= link_to scan_product_path, class:'btn btn-success btn-scan' do %>
-        <%= image_tag "barcode.png", height:'30', width:'auto' %>
-      <% end %>
-    </div>
+    <%= render "/shared/button" %>
   </div>
 </main>
 
