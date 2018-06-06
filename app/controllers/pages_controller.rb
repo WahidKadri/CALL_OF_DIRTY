@@ -13,9 +13,8 @@ class PagesController < ApplicationController
       @list_to_show = @users_list
     elsif @index_of_user >= 5 && @users_list.length >= 10
       @list_to_show = @users_list[(@index_of_user - 5)..(@index_of_user + 5)]
-    # elsif @index_of_user < 5 && @users_list.length >= 10
     else @index_of_user < 5
-      @list_to_show = @users_list[(@users_list[0])..(@index_of_user + 5)]
+      @list_to_show = @users_list.first(10)
     end
   end
 
