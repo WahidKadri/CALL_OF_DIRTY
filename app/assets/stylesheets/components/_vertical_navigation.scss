@@ -82,7 +82,7 @@ nav .fa {
 /*BOUTON*/
 #btn-burger {
   margin-top: -25px;
-  width: 100px;
+  width: 80px;
   height: 100px;
   position: fixed;
   z-index: 1000;
@@ -94,6 +94,15 @@ nav .fa {
   outline: none;
 }
 
+
+.cod-navbar {
+  background: white;
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+  z-index: 2;
+}
 
 
 
