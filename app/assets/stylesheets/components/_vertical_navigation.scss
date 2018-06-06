@@ -82,11 +82,10 @@ nav .fa {
 /*BOUTON*/
 #btn-burger {
   margin-top: -25px;
-  width: 80px;
-  height: 100px;
+  width: 60px;
   position: fixed;
   z-index: 1000;
-  top: 15px;
+  top: 31px;
   left: 0px;
   background: none;
   border: none;
@@ -98,13 +97,15 @@ nav .fa {
 .cod-navbar {
   background: white;
   position: fixed;
+  top: 0;
   width: 100%;
   text-align: right;
   padding: 10px;
   z-index: 2;
+  img {
+    margin-right: 25px;
+  }
 }
-
-
 
 #btn-burger svg {
   fill: none;
