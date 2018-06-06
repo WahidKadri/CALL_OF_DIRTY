@@ -94,6 +94,14 @@
   // align-items: flex-end;
 }
 
+.list-organised {
+  display: flex;
+  align-content: space-around;
+  width: 100%;
+  flex-direction: row;
+}
+
+
 .paddingblock {
   margin-top: 15px;
 }
