@@ -3,30 +3,30 @@
     <h3 class="text-center">Mon Dashboard</h3>
 </div>
 
-  <main>
+<main>
   <div class="backg">
 
     <div class="container">
       <div class="avatar-information">
       <div class="row">
         <div class="col-xs-6">
-            <% if current_user.level == 1 %>
-              <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
-            <% elsif current_user.level == 2 %>
-              <%= image_tag "trashflies.png", height:'185', width:'auto' %>
-            <% else %>
-            <p>no avatar today</p>
-            <% end %>
-       </div>
-          <div class="col-xs-6">
-            <div class="information">
-              <ul>
-                <li> <strong>Pseudo</strong> : <%= current_user.pseudo %></li>
-                <li> <strong>level</strong> : <%= current_user.level %></li>
-                <li> <strong>Point total</strong> : <%= current_user.score %></li>
-              </ul>
-            </div>
+          <% if current_user.level == 1 %>
+            <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
+          <% elsif current_user.level == 2 %>
+            <%= image_tag "trashflies.png", height:'185', width:'auto' %>
+          <% else %>
+          <p>no avatar today</p>
+          <% end %>
+        </div>
+        <div class="col-xs-6">
+          <div class="information">
+            <ul>
+              <li> <strong>Pseudo</strong> : <%= current_user.pseudo %></li>
+              <li> <strong>level</strong> : <%= current_user.level %></li>
+              <li> <strong>Point total</strong> : <%= current_user.score %></li>
+            </ul>
           </div>
+        </div>
         </div>
       </div>
       <div class="row">
@@ -114,10 +114,12 @@
 
 
     </div>
+    <div class="text-center container-btn">
       <%= link_to scan_product_path, class:'btn btn-success btn-scan' do %>
         <%= image_tag "barcode.png", height:'30', width:'auto' %>
       <% end %>
-  </main>
-</div>
+    </div>
+  </div>
+</main>
 
 
