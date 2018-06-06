@@ -32,8 +32,8 @@
           <input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
             <div class="trash yellow">
-              <%= image_tag "yellow_trash.png", height:'50vh' %>
-              <p>à recycler: benne de tri</p>
+              <%= image_tag "yellow_trash2.png", height:'50vh' %>
+              <p><!-- <i class="fas fa-recycle"></i> --> papier, carton, plastique, métaux</p>
             </div>
           </label>
         </div>
@@ -44,8 +44,8 @@
           <input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
             <div class="trash green">
-              <%= image_tag "green_trash.png", height:'50vh' %>
-              <p>à recycler: benne à verre</p>
+              <%= image_tag "white_trash.png", height:'50vh' %>
+              <p><!-- <i class="fas fa-recycle"> --></i> verre</p>
             </div>
           </label>
         </div>
@@ -56,8 +56,8 @@
           <input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
           <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
             <div class="trash white">
-              <%= image_tag "garbage_trash.png", height:'50vh' %>
-              <p>à jeter: benne à ordures</p>
+              <%= image_tag "green_trash2.png", height:'50vh' %>
+              <p><!-- <i class="fas fa-trash-alt"> --></i> poubelle</p>
             </div>
           </label>
         </div>
