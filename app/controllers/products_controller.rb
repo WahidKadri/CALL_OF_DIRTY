@@ -71,8 +71,6 @@ class ProductsController < ApplicationController
     else
       UserBadge.create(user: current_user, badge: Badge.find(1), point: 1)
     end
-    controle_badge
-
   end
 
   def controle_badge
@@ -82,6 +80,26 @@ class ProductsController < ApplicationController
        # a =  UserBadge.find_by(badge: user_badge)
        user_badge.point = Badge.find_by(title: user_badge.badge.title).level
        user_badge.save
+      end
+    end
+    changing_avatar_1
+  end
+
+
+  def changing_avatar_1
+    badges_1_user = UserBadge.find_by(user: current_user, badge: Badge.find(1))
+    badges_2_user = UserBadge.find_by(user: current_user, badge: Badge.find(2))
+    badges_3_user = UserBadge.find_by(user: current_user, badge: Badge.find(3))
+    badge_1_official = Badge.find(1)
+    badge_2_official = Badge.find(2)
+    badge_3_official = Badge.find(3)
+    if !badges_1_user.nil? && !badges_2_user.nil? && !badges_3_user.nil?
+      if (badges_1_user.point == badge_1_official.level) && (badges_2_user.point == badge_2_official.level) && (badges_3_user.point == badge_3_official.level)
+      current_user.level += 1
+      current_user.save
+      badges_1_user.update(point: 0)
+      badges_2_user.update(point: 0)
+      badges_3_user.update(point: 0)
       end
     end
   end
