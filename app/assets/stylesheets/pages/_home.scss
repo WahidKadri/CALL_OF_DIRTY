@@ -14,14 +14,42 @@
 background-image: linear-gradient(to bottom, #f2ffff, #ecfefe, #e6fefd, #dffdfc, #d9fcfb);
 }
 
-.flexline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .btn-scan {
-  flex: 0 0 auto;
-  // font-family: 'chocolate_cover_raindrops';
+.header-home {
+  box-shadow: 1px 1px 3px black;
+  .h3 {
+      height: 86px;
   }
+}
+.avatar-information {
+  padding-bottom: 2vh;
+
+}
+
+.information {
+  height: 100%;
+  box-shadow: 1px 1px 20px lightblue;
+  border-radius: 20px;
+  font-size: 18px;
+  background-color: white;
+  ul li {
+   list-style-type: none;
+ }
+   ul {
+  margin : 1vh;
+  padding : 1vh;
+  }
+}
+
+
+
+.flexline {
+ // display: flex;
+//  align-items: center;
+//  justify-content: center;
+  //.btn-scan {
+ // flex: 0 0 auto;
+  // font-family: 'chocolate_cover_raindrops';
+ // }
 }
 
 .item {
