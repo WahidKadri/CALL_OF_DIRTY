@@ -20,6 +20,10 @@ background-image: linear-gradient(to bottom, #f2ffff, #ecfefe, #e6fefd, #dffdfc,
 padding-top: 30px;
 }
 
+.spacer {
+height: 20vh;
+}
+
 .header-home {
   box-shadow: 1px 1px 3px black;
   .h3 {
@@ -34,8 +38,8 @@ padding-top: 30px;
 .information {
   height: 100%;
   box-shadow: 1px 1px 20px lightblue;
-  border-radius: 20px;
-  font-size: 18px;
+  border-radius: 1px;
+  font-size: 24px;
   background-color: white;
   ul li {
    list-style-type: none;

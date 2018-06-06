@@ -4,13 +4,19 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="container-card">
-  <!--           <div class="aligne"> -->
-              <%= image_tag(@product.photo, class:'img-product') %>
-              <h4><%= @product.name %> <%= @product.brand %></h4>
-  <!--           </div> -->
+            <%= image_tag(@product.photo, class:'img-product') %>
+            <h4><%= @product.name %> <%= @product.brand %></h4>
           </div>
-          <!-- <div class="col-xs-9"> -->
-          <!-- </div> -->
+          
+<%= render 'shared/vertical_navigation' %>
+
+<div class="big-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container-card">
+            <%= image_tag(@product.photo, class:'img-product') %>
+            <h4><%= @product.name %> <%= @product.brand %></h4>
         </div>
       </div>
     </div>
@@ -32,7 +38,7 @@
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
               <div class="trash yellow">
                 <%= image_tag "yellow_trash2.png", height:'50vh' %>
-                <p><!-- <i class="fas fa-recycle"></i> --> papier, carton, plastique, métaux</p>
+                <p> papier, carton, plastique, métaux</p>
               </div>
             </label>
           </div>
@@ -44,7 +50,7 @@
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
               <div class="trash green">
                 <%= image_tag "white_trash.png", height:'50vh' %>
-                <p><!-- <i class="fas fa-recycle"> --></i> verre</p>
+                <p> verre</p>
               </div>
             </label>
           </div>
@@ -56,7 +62,7 @@
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
               <div class="trash white">
                 <%= image_tag "green_trash2.png", height:'50vh' %>
-                <p><!-- <i class="fas fa-trash-alt"> --></i> poubelle</p>
+                <p> poubelle</p>
               </div>
             </label>
           </div>
