@@ -9,7 +9,7 @@ body.open {
 
 /*NAVIGATION*/
 h3 {
-  margin-top: -48px;
+  margin-top: 1px;
   margin-bottom: 5vh;
 }
 
@@ -146,7 +146,6 @@ nav .fa {
 main {
   // transform: translateX(0);
   transition: transform 0.5s ease-in-out;
-  padding: 90px 0px 0 0;
 }
 
 main.open {
