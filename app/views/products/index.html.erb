@@ -16,10 +16,55 @@
             </div>
           </div>
         </div>
+      <div class="modal fade" id="modal-scan-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <%= image_tag "#{product.photo}" %>
+              <h2><%= product.brand %></h2>
+              <p><%= product.name %></p>
+              <% product.packagings.each do |packaging| %>
+                <p><%= packaging.name %></p>
+                <% if packaging.bin.color == "blanc" %>
+                  <div class ="circle-border">
+                    <%= image_tag "white_trash.png", height:'50vh' %>
+                    <p>verre</p>
+                  </div>
+                <% elsif packaging.bin.color == "jaune" %>
+                  <div class ="circle-border">
+                    <%= image_tag "yellow_trash2.png", class:'circle-border', height:'50vh' %>
+                    <p>papier, carton, plastique, métaux</p>
+                  </div>
+                <% else %>
+                  <div class ="circle-border">
+                    <%= image_tag "green_trash2.png", class:'circle-border', height:'50vh' %>
+                    <p>poubelle</p>
+                  </div>
+                <% end %>
+              <% end %>
+              <div class="source text-center">
+                <% if product.source == "reliable" %>
+                  <i class="fas fa-lock"> <span>Renseigné par le fabricant</i></span>
+                <% else %>
+                  <i class="fas fa-users"> <span>Renseigné par la communauté</i></span>
+                <% end %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <%= link_to products_path, class:'btn btn-success btn-scan' do %>
+                <i class="fas fa-check"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <% end %>
-  </div>
+    </div>
 </main>
+
 <div class="background-card">
 </div>
+
 
 
