@@ -29,10 +29,6 @@
     <%= link_to products_path do %>
       <i class="fas fa-search"></i> Rechercher un produit
     <% end %>
-    <%= link_to root_path do %>
-      <i class="fas fa-envelope"></i> Contact
-    <% end %>
-
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-user-slash"></i>Se déconnecter
