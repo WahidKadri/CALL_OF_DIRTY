@@ -3,13 +3,21 @@ class PagesController < ApplicationController
 
   def home
     @users_podium = User.order(score: :desc).limit(3)
-    @user_first = @users_podium.first
-    @user_second = @users_podium.second
-    @user_last = @users_podium.last
+    @up = []
+    @up << @users_podium.second
+    @up << @users_podium.first
+    @up << @users_podium.last
 
     @users_list = User.order(score: :desc)
     @index_of_user = @users_list.index(current_user)
-    @list_to_show = @users_list[(@index_of_user - 5).. (@index_of_user + 5) ]
+    if @users_list.length < 10
+      @list_to_show = @users_list
+    elsif @index_of_user >= 5 && @users_list.length >= 10
+      @list_to_show = @users_list[(@index_of_user - 5)..(@index_of_user + 5)]
+    # elsif @index_of_user < 5 && @users_list.length >= 10
+    else @index_of_user < 5
+      @list_to_show = @users_list[(@users_list[0])..(@index_of_user + 5)]
+    end
   end
 
   def privacy
