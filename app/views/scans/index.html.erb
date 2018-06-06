@@ -1,69 +1,73 @@
 <%= render 'shared/vertical_navigation' %>
 
-<main class="temp">
+<div class="backg">
+<main>
+
+
+
   <h3 class="text-center">Mes Scans</h3>
-  <% @scans.each do |scan| %>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="container-card" data-target="#modal-scan-<%= scan.id %>" data-toggle="modal" >
-            <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
-            <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
-            <div class="navigation">
-              <h2><%= scan.product.brand %></h2>
-              <p><%= scan.product.name %></p>
+      <% @scans.each do |scan| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="container-card" data-target="#modal-scan-<%= scan.id %>" data-toggle="modal" >
+              <div class="picture" style="background-image: url('<%= scan.product.photo %>')"></div>
+              <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
+              <div class="navigation">
+                <h2><%= scan.product.brand %></h2>
+                <p><%= scan.product.name %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal fade" id="modal-scan-<%= scan.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <%= image_tag "#{scan.product.photo}" %>
-              <h2><%= scan.product.brand %></h2>
-              <p><%= scan.product.name %></p>
-              <% scan.product.packagings.each do |packaging| %>
-                <p><%= packaging.name %></p>
-                <% if packaging.bin.color == "blanc" %>
-                  <div class ="circle-border">
-                    <%= image_tag "green_trash.png", height:'50vh' %>
-                    <p>à recycler: benne à verre</p>
-                  </div>
-                <% elsif packaging.bin.color == "jaune" %>
-                  <div class ="circle-border">
-                    <%= image_tag "yellow_trash.png", class:'circle-border', height:'50vh' %>
-                    <p>à recycler: benne de tri</p>
-                  </div>
-                <% else %>
-                  <div class ="circle-border">
-                    <%= image_tag "garbage_trash.png", class:'circle-border', height:'50vh' %>
-                    <p>à jeter: benne à ordures</p>
-                  </div>
+        <div class="modal fade" id="modal-scan-<%= scan.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <%= image_tag "#{scan.product.photo}" %>
+                <h2><%= scan.product.brand %></h2>
+                <p><%= scan.product.name %></p>
+                <% scan.product.packagings.each do |packaging| %>
+                  <p><%= packaging.name %></p>
+                  <% if packaging.bin.color == "blanc" %>
+                    <div class ="circle-border">
+                      <%= image_tag "green_trash.png", height:'50vh' %>
+                      <p>à recycler: benne à verre</p>
+                    </div>
+                  <% elsif packaging.bin.color == "jaune" %>
+                    <div class ="circle-border">
+                      <%= image_tag "yellow_trash.png", class:'circle-border', height:'50vh' %>
+                      <p>à recycler: benne de tri</p>
+                    </div>
+                  <% else %>
+                    <div class ="circle-border">
+                      <%= image_tag "garbage_trash.png", class:'circle-border', height:'50vh' %>
+                      <p>à jeter: benne à ordures</p>
+                    </div>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <div class="source text-center">
-                <% if scan.product.source == "reliable" %>
-                  <i class="fas fa-lock"> <span>Renseigné par le fabricant</i></span>
-                <% else %>
-                  <i class="fas fa-users"> <span>Renseigné par la communauté</i></span>
+                <div class="source text-center">
+                  <% if scan.product.source == "reliable" %>
+                    <i class="fas fa-lock"> <span>Renseigné par le fabricant</i></span>
+                  <% else %>
+                    <i class="fas fa-users"> <span>Renseigné par la communauté</i></span>
+                  <% end %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
+                  <i class="fas fa-check"></i>
                 <% end %>
               </div>
             </div>
-            <div class="modal-footer">
-              <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
-                <i class="fas fa-check"></i>
-              <% end %>
-            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
 </main>
-<div class="background-card">
+<!-- <div class="background-card">
 </div>
-
+ -->
 
 <div class="flexline">
     <%= link_to scan_product_path, class:'btn btn-success btn-scan btn-scan-fixe' do %>

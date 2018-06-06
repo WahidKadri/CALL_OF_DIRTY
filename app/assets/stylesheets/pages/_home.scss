@@ -1,21 +1,17 @@
 // Specific CSS for your home-page
-body {
-  margin-top: -25px;
-}
 
-.ranking {
-  margin-top: 5px;
-  font-size: 18px;
-}
 
-.background {
-  background-image: image-url('backgroundCOD.jpg');
-  background-size: cover;
-  height: 200px;
-  width: 150px;
-  // position: fixed;
-  z-index: -1;
-  opacity: 1;
+// .background {
+//   background-image: image-url('backgroundCOD.jpg');
+//   background-size: cover;
+//   height: 200px;
+//   width: 150px;
+//   // position: fixed;
+//   z-index: -1;
+//   opacity: 1;
+// }
+.backg {
+background-image: linear-gradient(to bottom, #f2ffff, #ecfefe, #e6fefd, #dffdfc, #d9fcfb);
 }
 
 .flexline {

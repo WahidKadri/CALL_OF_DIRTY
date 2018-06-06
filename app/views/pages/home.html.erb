@@ -1,6 +1,6 @@
 <%= render 'shared/vertical_navigation' %>
 
-<div>
+<div class="backg">>
   <main>
 
 
@@ -15,7 +15,7 @@
           <div class="badges">
             <%= image_tag "Badge_applause.png", height:'60', width:'60' %>
             <div>
-              Yes i scan
+              Yes I Scan !
               <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
                 <%= UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%= Badge.find(1).level %>
               <% else %>
