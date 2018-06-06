@@ -28,17 +28,17 @@
                 <% if packaging.bin.color == "blanc" %>
                   <div class ="circle-border">
                     <%= image_tag "white_trash.png", height:'50vh' %>
-                    <p><i class="fas fa-recycle"></i> verre</p>
+                    <p>verre</p>
                   </div>
                 <% elsif packaging.bin.color == "jaune" %>
                   <div class ="circle-border">
                     <%= image_tag "yellow_trash2.png", class:'circle-border', height:'50vh' %>
-                    <p><i class="fas fa-recycle"></i> papier, carton, plastique, métaux</p>
+                    <p>apier, carton, plastique, métaux</p>
                   </div>
                 <% else %>
                   <div class ="circle-border">
                     <%= image_tag "green_trash2.png", class:'circle-border', height:'50vh' %>
-                    <p><i class="fas fa-trash-alt"></i> poubelle</p>
+                    <p>poubelle</p>
                   </div>
                 <% end %>
               <% end %>
