@@ -9,7 +9,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-5">
-          <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
+            <% if current_user.level == 1 %>
+              <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
+            <% elsif current_user.level == 2 %>
+              <%= image_tag "trashflies.png", height:'185', width:'auto' %>
+            <% else %>
+            <p>no avatar today</p>
+            <% end %>
         </div>
         <div class="col-xs-7">
           <div class="badges">
@@ -51,11 +57,13 @@
         <div class="col-xs-4">
           <div class="paddingblock">
             <div class="ranking">
-            <!-- <ol>
-               <#% @list_to_show.each do |user|  %>
-              <li> <#%= user.email %> <#%= user.score %></li>
-            <#% end %>
-           </ol> -->
+              <h5 class="text-center">Classement local</h5>
+              <ul class="list-unstyled">
+                <% @list_to_show.each_with_index do |user, index|  %>
+                  <li>
+                    <%= index + 1 %> <%= user.pseudo %>/<%= user.score %> pt</li>
+                <% end %>
+             </ul>
             </div>
           </div>
         </div>
@@ -65,7 +73,7 @@
             <div class="toptrois text-center">
 
               <ul class="list-inline">
-                <% @users_podium.each do |user| %>
+                <% @up.each do |user| %>
                   <li>
                     <div class="podium-position text-center">
                       <% if user.provider == "facebook" %>
