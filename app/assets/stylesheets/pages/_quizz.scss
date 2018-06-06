@@ -1,6 +1,7 @@
 .big-container {
-  margin-left: 1vh;
+  // margin-left: 1vh;
   margin-top: 15vh;
+  text-align: center;
 }
 
 .aligne {
@@ -13,6 +14,7 @@
   font-family: Helvetica, Arial, Sans-Serif;
   color: #666F89;
   font-size: 16px;
+  padding: 15px;
 }
 
 legend {
@@ -21,7 +23,8 @@ legend {
 }
 
 h4 {
-  padding-top: 0;
+  padding-top: 1vh;
+  font-size: 7vh;
 }
 
 .img-product {
