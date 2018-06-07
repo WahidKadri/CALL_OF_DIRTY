@@ -82,8 +82,12 @@ nav .fa {
   text-align: right;
   padding: 10px;
   z-index: 2;
+
   img {
-    margin-right: 15px;
+    position: relative;
+    height: 30px;
+    top: -2px;
+    left: -100px;
   }
 }
 

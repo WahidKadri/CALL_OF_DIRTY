@@ -15,18 +15,33 @@ height: 20vh;
 }
 
 .information {
-  height: 100%;
-  box-shadow: 1px 1px 1px lightblue;
-  border-radius: 1px;
-  font-size: 24px;
-  background-color: white;
-  ul li {
-   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin: 0 0 12px;
+    text-align: left;
+    font-size: 32px;
+    font-family: helvetica;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
-  ul {
-  margin : 1vh;
-  padding : 1vh;
+
+  span {
+    font-size: 20px;
+    color: white;
+
+    strong {
+      background-color: white;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: #333;
+      padding: 3px;
+      border-radius: 3px;
+    }
   }
+
 }
 
 .pseudo {
@@ -37,6 +52,41 @@ height: 20vh;
   position: absolute;
   top: 20;
   left: 60vh;
+}
+
+.image {
+  opacity: 0.4;
+  width: 60px;
+  height: 60px;
+}
+
+.complete {
+  opacity: 1;
+}
+
+.title-progbar {
+  position: relative;
+  width: 100%;
+  padding: 0 13px 0 5px;
+
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  i {
+    font-size: 12px;
+    position: absolute;
+    right: 14px;
+    top: 0;
+    opacity: 0.6;
+  }
+}
+
+.progress {
+  margin-bottom: 0px;
+  height: 15px;
 }
 
 .podium-position {
@@ -52,21 +102,30 @@ height: 20vh;
   }
 }
 
-.underline {
-  padding-top: 5px;
-  padding-bottom: 3px;
-  background-color: #F2EC1F;
-}
-
-.classement {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h3 {
-  margin-bottom: 0;
+.ranking {
+  hr {
+    margin: 12px 0 !important;
   }
 }
 
+.classement {
+  padding: 0 8px;
+  height: 30px;
+
+  .fa-trophy {
+    font-size: 17px;
+    color: #30b796;
+  }
+
+  h3 {
+    display: inline-block;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Helvetica;
+  }
+}
 
 .photo-podium {
     // position: absolute;

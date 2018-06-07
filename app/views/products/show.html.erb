@@ -58,8 +58,8 @@
   <% end %>
 
     <div class="text-center">
-      <%= button_tag(type: 'submit', class: " btn btn-success btn-quizz") do %>
-        <i class="fas fa-question"></i>
+      <%= button_tag(type: 'submit', class: " btn btn-success btn-scan") do %>
+        GO !
       <% end %>
     </div>
   <% end %>
@@ -83,7 +83,7 @@
 
           </div>
           <div class="modal-footer">
-            <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
+            <%= link_to root_path, class:'btn btn-success btn-scan' do %>
               <i class="fas fa-check"></i>
             <% end %>
           </div>
