@@ -1,0 +1,21 @@
+body {
+  font-size: 28px;
+  background: linear-gradient(#3EB9CC, #456FBB);
+}
+
+h3 {
+  margin-top: 1px;
+  margin-bottom: 5vh;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}

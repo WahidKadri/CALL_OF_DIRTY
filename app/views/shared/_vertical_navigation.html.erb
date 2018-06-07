@@ -22,21 +22,21 @@
       <!-- <h4 class="text-center">CALL OF DIRTY</h4> -->
     </div>
     <%= link_to root_path do %>
-      <i class="fas fa-home"></i> Accueil
+      <i class="fas fa-home"></i> <h2>Accueil</h2>
     <% end %>
     <%= link_to scans_path do %>
-      <i class="fas fa-barcode"></i> Mes scans
+      <i class="fas fa-barcode"></i> <h2>Mes scans</h2>
     <% end %>
     <%= link_to products_path do %>
-      <i class="fas fa-search"></i> Rechercher un produit
+      <i class="fas fa-search"></i> <h2>Rechercher</h2>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fas fa-user-slash"></i>Se déconnecter
+        <i class="fas fa-user-slash"></i><h2>Déconnexion</h2>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <i class="fas fa-user-check"></i>Se connecter
+        <i class="fas fa-user-check"></i><h2>Se connecter</h2>
       <% end %>
     <% end %>
   </nav>

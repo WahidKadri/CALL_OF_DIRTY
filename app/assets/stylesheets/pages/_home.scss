@@ -1,23 +1,9 @@
 // Specific CSS for your home-page
-
-
-// .background {
-//   background-image: image-url('backgroundCOD.jpg');
-//   background-size: cover;
-//   height: 200px;
-//   width: 150px;
-//   // position: fixed;
-//   z-index: -1;
-//   opacity: 1;
-// }
-
 .container {
   margin-top: 80px;
-}
-
-.backg {
-background-image: linear-gradient(to bottom, #f2ffff, #ecfefe, #e6fefd, #dffdfc, #d9fcfb);
-padding-top: 30px;
+  h1 {
+    text-align: center;
+  }
 }
 
 .spacer {
@@ -50,18 +36,6 @@ height: 20vh;
   }
 }
 
-
-
-.flexline {
- // display: flex;
-//  align-items: center;
-//  justify-content: center;
-  //.btn-scan {
- // flex: 0 0 auto;
-  // font-family: 'chocolate_cover_raindrops';
- // }
-}
-
 .item {
   position: absolute;
   top: 20;
@@ -73,28 +47,11 @@ height: 20vh;
   border-radius: 5px;
   padding: 0 2px;
   p {
-    font-family: Helvetica, Arial, Sans-Serif;
     font-size: 12px;
   }
-}
-
-.backgradiant {
-  background-image: linear-gradient(to right top, #03bfff, #00d7ff, #00ebe1, #00f996, #49ff00);
-  background-size: cover;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: fixed;
-  z-index: -1;
-  opacity: 0.9;
 }
 
 h5 {
   font-family: Helvetica, Arial, Sans-Serif;
   font-size: 14px;
 }
-
-
-

@@ -1,17 +1,6 @@
 <main>
-  <div class="big-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="container-card">
-            <%= image_tag(@product.photo, class:'img-product') %>
-            <h4><%= @product.name %> <%= @product.brand %></h4>
-          </div>
-          
-<%= render 'shared/vertical_navigation' %>
 
-<div class="big-container">
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
       <div class="col-xs-12">
         <div class="container-card">
@@ -22,23 +11,22 @@
     </div>
     <hr>
   <div class="enonce">
-    <p>Sélectionner la benne de tri la plus adaptée à chaque partie d'emballage.</p>
+    <p>Jette dans la bonne poubelle</p>
   </div>
 
 
   <%= simple_form_for bin_game_new_path, remote: true do |f| %>
-    <% @product.packagings.each do |p| %>
+    <% @product.packagings.each_with_index do |p, index| %>
 
-    <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
+    <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= index + 1 %> - <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
 
-      <ul class="list-inline text-center">
+      <ul class="list-inline text-center aligne">
         <li>
           <div class="form-check">
             <input class="form-check-input radio_buttons required trash-choice" type="radio" value="jaune" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]"  id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_jaune">
               <div class="trash yellow">
                 <%= image_tag "yellow_trash2.png", height:'50vh' %>
-                <p> papier, carton, plastique, métaux</p>
               </div>
             </label>
           </div>
@@ -48,9 +36,8 @@
           <div class="form-check">
             <input class="form-check-input radio_buttons required trash-choice" type="radio" value="blanc" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_blanc">
-              <div class="trash green">
+              <div class="trash white">
                 <%= image_tag "white_trash.png", height:'50vh' %>
-                <p> verre</p>
               </div>
             </label>
           </div>
@@ -60,9 +47,8 @@
           <div class="form-check">
             <input class="form-check-input radio_buttons required trash-choice" type="radio" value="vert" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" id="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
             <label class="collection_radio_buttons" for="_products_<%= "#{@product.id}" %>[<%= "#{p.name}" %>_vert">
-              <div class="trash white">
+              <div class="trash green">
                 <%= image_tag "green_trash2.png", height:'50vh' %>
-                <p> poubelle</p>
               </div>
             </label>
           </div>
@@ -99,22 +85,14 @@
             </div>
 
 
-             <div id="result"></div>
+            <div id="result"></div>
 
-
-
-
-
-
-
-        </div>
-        <div class="modal-footer">
-
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-          <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
-            <i class="fas fa-check"></i>
-          <% end %>
-
+          </div>
+          <div class="modal-footer">
+            <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
+              <i class="fas fa-check"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

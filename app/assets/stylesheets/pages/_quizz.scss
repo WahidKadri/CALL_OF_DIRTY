@@ -1,18 +1,12 @@
-.big-container {
-  // margin-left: 1vh;
-  // margin-top: 15vh;
-  text-align: center;
-}
-
 .aligne {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .enonce p {
   font-family: Helvetica, Arial, Sans-Serif;
-  color: #666F89;
+  color: white;
   font-size: 16px;
   padding: 15px;
 }
@@ -20,6 +14,7 @@
 legend {
   font-family: Helvetica, Arial, Sans-Serif;
   font-size: 16px;
+  border: none;
 }
 
 h4 {
