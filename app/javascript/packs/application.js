@@ -13,12 +13,23 @@ $(document).ready(function(){
   $(".category-choice").click(function(){
     $(this).toggleClass("active");
   });
+
+  // IMAGE OPACITY - HOME
+  Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
+    if (bar.getAttribute('aria-valuenow') == 100) {
+      const badge = bar.parentNode.parentNode.parentNode;
+      badge.querySelector('img').classList.add('complete');
+    };
+  });
 });
 
  Quagga.init({
    inputStream : {
      name : "Live",
      type : "LiveStream",
+     constraints: {
+        width: 320
+    },
      target: document.querySelector('#barcode-scanner')    // Or '#yourElement' (optional)
    },
    decoder : {
