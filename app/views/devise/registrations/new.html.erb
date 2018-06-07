@@ -1,24 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-       <h1>Créer un compte</h1>
+  <div class="container">
+    <div class="wrapper">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+         <h1>Créer un compte</h1>
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :pseudo, required: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= f.input :photo, required: true, input_html: { class:'btn-photo' } %>
-          <%= f.input :photo_cache, as: :hidden %>
-        </div>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :pseudo, required: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+            <%= f.input :photo, required: true, input_html: { class:'btn-photo' } %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
 
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Créer mon compte" %>
-        </div>
-      <% end %>
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Créer mon compte" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

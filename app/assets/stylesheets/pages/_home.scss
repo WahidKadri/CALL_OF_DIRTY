@@ -16,9 +16,9 @@ height: 20vh;
       height: 86px;
   }
 }
+
 .avatar-information {
   padding-bottom: 2vh;
-
 }
 
 .information {
@@ -29,15 +29,15 @@ height: 20vh;
   background-color: white;
   ul li {
    list-style-type: none;
- }
-   ul {
+  }
+  ul {
   margin : 1vh;
   padding : 1vh;
   }
 }
 
 .pseudo {
-  font-size: 35px;
+  font-size: 24px;
 }
 
 .item {
@@ -47,23 +47,21 @@ height: 20vh;
 }
 
 .podium-position {
-  // box-shadow: 1px 1px 3px black;
-  // border-radius: 5px;
-  // padding: 0 2px;
-text-align: center;
-width: 70px;
-// background-color: blue;
-
+  text-align: center;
+  width: 70px;
   p {
     font-size: 12px;
   }
   .small-avatar {
   border: 2px solid black;
   }
-
 }
 
-h5 {
-  font-family: Helvetica, Arial, Sans-Serif;
-  font-size: 14px;
+.underline {
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px black;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  background-color: #52A4C9;
 }
+

@@ -20,8 +20,8 @@
             <% else %>
                     <p class="pseudo"><%= current_user.pseudo %></p>
                   <% end %></strong></li>
-          <li> <strong>level</strong> : <%= current_user.level %></li>
-          <li> <strong>Point total</strong> : <%= current_user.score %></li>
+          <li> <p><strong>level</strong> : <%= current_user.level %></p>  </li>
+          <li> <p><strong>Point total</strong> : <%= current_user.score %></p></li>
         </ul>
       </div>
     </div>
@@ -31,36 +31,36 @@
     <div class="col-xs-12">
       <div class="badges">
         <%= image_tag "Badge_applause.png", height:'60', width:'60' %>
-        <div>
+        <p>
           Yes I Scan !
           <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
             <%= UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%= Badge.find(1).level %>
           <% else %>
             <%= 0 %> / <%= Badge.find(1).level %>
          <% end %>
-        </div>
+        </p>
       </div>
       <div class="badges">
         <%= image_tag "Badge_diploma.png", height:'60', width:'60' %>
-        <div>
+        <p>
           Diplomé
           <% if !UserBadge.find_by(user: current_user, badge_id: 2).nil? %>
             <%= UserBadge.find_by(user: current_user, badge_id: 2).point %> / <%= Badge.find(2).level %>
           <% else %>
             <%= 0 %> / <%= Badge.find(2).level %>
          <% end %>
-        </div>
+        </p>
       </div>
       <div class="badges">
         <%= image_tag "Badge_paparazzi.png", height:'60', width:'60' %>
-      <div>
+        <p>
           Paparazzi
           <% if !UserBadge.find_by(user: current_user, badge_id: 3).nil? %>
             <%= UserBadge.find_by(user: current_user, badge_id: 3).point %> / <%= Badge.find(3).level %>
           <% else %>
             <%= 0 %> / <%= Badge.find(3).level %>
          <% end %>
-       </div>
+        </p>
       </div>
     </div>
   </div>
@@ -68,32 +68,58 @@
     <div class="col-xs-12">
       <div class="paddingblock">
         <div class="ranking">
-          <h5 class="text-center">Classement local <i class="fas fa-trophy"></i></h5>
+          <h3 class="text-center">Classement local <i class="fas fa-trophy"></i></h3>
           <hr>
           <div class="list-organised">
           <ul class="list-unstyled">
             <% @list_to_show.each_with_index do |user, index|  %>
               <li>
-              <p class="rank-nb">#<%= index + 1 %></p>
-                <% if user.provider == "facebook" %>
-                    <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35 %>
-                  <div class="user-details">
-                   <p><%= user.first_name %><%= user.id %></p>
-                    <p class="user-score"><%= user.score %> points</p>
+                <% if user == current_user %>
+                  <div class="underline">
+                    <p class="rank-nb">#<%= index + 1 %></p>
+                    <% if user.provider == "facebook" %>
+                      <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35 %>
+                      <div class="user-details">
+                        <p><%= user.first_name %><%= user.id %></p>
+                        <p class="user-score"><%= user.score %> points</p>
+                      </div>
+                    <% elsif user.photo.present? %>
+                      <%= cl_image_tag user.photo, class:'small-avatar', height: 35, width: 35 %>
+                      <div class="user-details">
+                        <p><%= user.pseudo %></p>
+                        <p class="user-score"><%= user.score %> points</p>
+                    </div>
+                    <% else %>
+                      <%= image_tag "green_trash.png", class:'small-avatar', height: 35, width: 35 %>
+                      <div  class="user-details">
+                        <p><%= user.pseudo %></p>
+                        <p class="user-score"><%= user.score %> points</p>
+                      </div>
+                    <% end %>
                   </div>
+
+                <% else %>
+                  <p class="rank-nb">#<%= index + 1 %></p>
+                  <% if user.provider == "facebook" %>
+                    <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35 %>
+                    <div class="user-details">
+                      <p><%= user.first_name %><%= user.id %></p>
+                      <p class="user-score"><%= user.score %> points</p>
+                    </div>
                   <% elsif user.photo.present? %>
                     <%= cl_image_tag user.photo, class:'small-avatar', height: 35, width: 35 %>
                     <div class="user-details">
-                    <p><%= user.pseudo %></p>
-                    <p class="user-score"><%= user.score %> points</p>
+                      <p><%= user.pseudo %></p>
+                      <p class="user-score"><%= user.score %> points</p>
                   </div>
                   <% else %>
                     <%= image_tag "green_trash.png", class:'small-avatar', height: 35, width: 35 %>
-                   <div  class="user-details">
-                    <p><%= user.pseudo %></p>
-                  <p class="user-score"><%= user.score %> points</p>
-                </div>
+                    <div  class="user-details">
+                      <p><%= user.pseudo %></p>
+                      <p class="user-score"><%= user.score %> points</p>
+                    </div>
                   <% end %>
+                <% end %>
               </li>
             <% end %>
          </ul>
