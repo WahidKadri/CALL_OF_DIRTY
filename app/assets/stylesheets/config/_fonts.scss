@@ -10,20 +10,7 @@
   font-weight: bold;
 }
 
-// @font-face {
-//   font-family: "chocolate_covered_raindrops";
-//   src: font-url('chocolate_covered_raindrops/chocolate_covered_raindrops_hollow.ttf') format('truetype');
-//   font-weight: double;
-// }
-
-
-// @font-face {
-//   font-family: "miamagon";
-//   src: font-url('miamagon/miamagon.otf') format('truetype');
-//   font-weight: normal;
-// }
-
- $my-body-font: "chocolate_covered_raindrops";
+ $my-body-font: Helvetica, Arial, Sans-Serif;
  $my-headers-font: "chocolate_covered_raindrops";
 
 // // Define fonts for body and headers
