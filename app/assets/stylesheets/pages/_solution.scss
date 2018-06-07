@@ -2,8 +2,34 @@
   font-size: 20px;
   text-align: center;
   vertical-align: middle;
+}
+
+.margin-bottom {
+  margin-bottom: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.solution-title {
+  // display: flex;
+  // align-items: center;
+}
+
+.same-height{
+height: 55px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.encadrement {
+  border: 1px solid black;
+  padding: 1vh;
+  text-transform: uppercase;
+  background-color: white;
 
 }
+
 
 .aligne {
   display: flex;

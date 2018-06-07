@@ -1,39 +1,43 @@
-  <div class="row aligne">
-    <div class="col-xs-3 solution"> <p><%= packaging %></p></div>
-    <div class="col-xs-3 solution"> <p>
+  <div class="row">
+    <div class="col-xs-12 solution encadrement"> <%= packaging %></div>
 
-      <% if bin_color == "jaune" %>
-        <%= image_tag "yellow_trash.png", height:'50vh' %>
+  <div class="row solution-title">
+    <div class="col-xs-4 text-center same-height"> <h5>Votre réponse</h5></div>
+    <div class="col-xs-4 text-center same-height"> <h5>La bonne réponse</h5></div>
+    <div class="col-xs-4 text-center same-height"> <h5>Point</div>
+  </div>
+
+  <div class="row margin-bottom">
+
+    <div class="col-xs-4 solution">
+      <p><% if bin_color == "jaune" %>
+        <%= image_tag "yellow_trash2.png", height:'50vh' %>
       <% elsif bin_color == "blanc" %>
-        <%= image_tag "green_trash.png", height:'50vh' %>
+        <%= image_tag "white_trash.png", height:'50vh' %>
       <% else %>
-        <%= image_tag "garbage_trash.png", height:'50vh' %>
-      <% end %>
-
-      </p>
+        <%= image_tag "green_trash2.png", height:'50vh' %>
+      <% end %></p>
     </div>
 
-    <div class="col-xs-3 solution circle-border"> <p>
-
-      <% if product.packagings.find_by(name: packaging).bin.color == "jaune" %>
-        <%= image_tag "yellow_trash.png", height:'50vh' %>
+    <div class="col-xs-4 solution circle-border">
+      <p><% if product.packagings.find_by(name: packaging).bin.color == "jaune" %>
+        <%= image_tag "yellow_trash2.png", height:'50vh' %>
       <% elsif product.packagings.find_by(name: packaging).bin.color == "blanc" %>
-        <%= image_tag "green_trash.png", height:'50vh' %>
+        <%= image_tag "white_trash.png", height:'50vh' %>
       <% else %>
-        <%= image_tag "garbage_trash.png", height:'50vh' %>
-      <% end %>
-
-    </p>
+        <%= image_tag "green_trash2.png", height:'50vh' %>
+      <% end %></p>
     </div>
 
 
-    <div class="col-xs-3 solution">
+    <div class="col-xs-4 solution">
       <% if product.packagings.find_by(name: packaging).bin.color == bin_color %>
         <p class="green-point"><strong>+1</strong></p>
       <% else %>
         <p>-</p>
       <% end %>
     </div>
-    </div>
+  </div>
 
+</div>
 </div>

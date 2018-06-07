@@ -18,7 +18,7 @@
   <%= simple_form_for bin_game_new_path, remote: true do |f| %>
     <% @product.packagings.each_with_index do |p, index| %>
 
-    <fieldset class="form-group radio_buttons required products_étui carton"><legend class="col-form-label pt-0"> <%= index + 1 %> - <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
+    <fieldset class="form-group radio_buttons required products_étui carton encad"><legend class="col-form-label pt-0 encadrement"> <%= index + 1 %> - <%= p.name %> <abbr title="required">*</abbr></legend><input type="hidden" name="/products/<%= "#{@product.id}" %>[<%= "#{p.name}" %>]" value="">
 
       <ul class="list-inline text-center aligne">
         <li>
@@ -75,14 +75,8 @@
 
 
 
-          <div class="container">
+          <div class="container without-margin">
 
-            <div class="row aligne">
-              <div class="col-xs-3"> <h5><strong>Element d'emballage</strong></h5></div>
-              <div class="col-xs-3"> <h5><strong>Votre réponse</strong></h5></div>
-              <div class="col-xs-3"> <h5><strong>La bonne réponse</strong></h5></div>
-              <div class="col-xs-3"> <h5><strong>Points</strong></h5></div>
-            </div>
 
 
             <div id="result"></div>
