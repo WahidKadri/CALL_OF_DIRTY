@@ -6,9 +6,9 @@
       <% if current_user.level == 1 %>
         <%= image_tag "Avatar1.png", height:'185', width:'auto' %>
       <% elsif current_user.level == 2 %>
-        <%= image_tag "trashflies.png", height:'185', width:'auto' %>
+        <%= image_tag "Avatar2.png", height:'170', width:'150' %>
       <% else %>
-      <p>no avatar today</p>
+        <%= image_tag "trashflies.png", height:'185', width:'auto' %>
       <% end %>
     </div>
     <div class="col-xs-6">
