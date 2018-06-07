@@ -37,7 +37,7 @@
             <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
               <%=  UserBadge.find_by(user: current_user, badge_id: 1).point %> / <%=  Badge.find(1).level %>
             <% else %>
-              0/ <%=  Badge.find( badge_id: 1).level %>
+              0/ <%=  Badge.find(1).level %>
             <% end %>
           </i>
 
@@ -88,7 +88,7 @@
             <% if !UserBadge.find_by(user: current_user, badge_id: 2).nil? %>
               <%=  UserBadge.find_by(user: current_user, badge_id: 2).point %> / <%=  Badge.find(2).level %>
             <% else %>
-              0/ <%=  Badge.find( badge_id: 2).level %>
+              0/ <%=  Badge.find(2).level %>
             <% end %>
           </i>
 
@@ -154,7 +154,7 @@
             <% if !UserBadge.find_by(user: current_user, badge_id: 3).nil? %>
               <%=  UserBadge.find_by(user: current_user, badge_id: 3).point %> / <%=  Badge.find(3).level %>
             <% else %>
-              0/ <%=  Badge.find( badge_id: 3).level %>
+              0/ <%=  Badge.find(3).level %>
             <% end %>
           </i>
 
