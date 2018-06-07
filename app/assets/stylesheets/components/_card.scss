@@ -10,8 +10,10 @@
   h1{
     margin-top: 0px;
     color: black;
+
   }
 }
+
 
 .container-card {
   opacity: 1;
@@ -68,19 +70,31 @@
   // align-items: center;
   // margin-bottom: 10px;
   margin-top: 15px;
-  box-shadow: 1px 1px 20px lightblue;
+  box-shadow: 1px 1px 1px lightblue;
   border-radius: 8px;
   //height: 30vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
   background-color: white;
   margin-bottom: 10vh;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  flex-direction: column;
+  align-items: center;
 }
+
+.podium-list {
+ width: 90%;
+ // background-color: blue;
+ display: flex;
+ justify-content: space-between;
+ padding: 0 10px;
+}
+
+
 
 .ranking {
   padding: 2vh;
-  box-shadow: 1px 1px 20px lightblue;
+  box-shadow: 1px 1px 1px lightblue;
   background-color: white;
   border-radius: 8px;
   // height: 30vh;
@@ -89,11 +103,37 @@
 }
 
 .list-organised {
+  li {
   display: flex;
-  align-content: space-around;
+  align-items: flex-start;
+  // justify-content: space-between;
   width: 100%;
   flex-direction: row;
+  // background-color: green;
+    }
+    .rank-nb {
+      width: 37px;
+      font-weight: bold;
+      margin-right: 7px;
+      // flex-grow: 0;
+    }
+    .small-avatar {
+      margin-right: 8px;
+      width: 35px;
+      height: 35px;
+      // flex-grow: 0;
+     }
+     .user-score {
+      // background-color: red;
+     }
+     .user-details {
+      display: flex;
+      justify-content: space-between;
+      // background-color: blue;
+      width: 98%;
+     }
 }
+
 
 
 .paddingblock {

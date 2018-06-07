@@ -23,7 +23,7 @@ height: 20vh;
 
 .information {
   height: 100%;
-  box-shadow: 1px 1px 20px lightblue;
+  box-shadow: 1px 1px 1px lightblue;
   border-radius: 1px;
   font-size: 24px;
   background-color: white;
@@ -36,6 +36,10 @@ height: 20vh;
   }
 }
 
+.pseudo {
+  font-size: 35px;
+}
+
 .item {
   position: absolute;
   top: 20;
@@ -43,12 +47,20 @@ height: 20vh;
 }
 
 .podium-position {
-  box-shadow: 1px 1px 3px black;
-  border-radius: 5px;
-  padding: 0 2px;
+  // box-shadow: 1px 1px 3px black;
+  // border-radius: 5px;
+  // padding: 0 2px;
+text-align: center;
+width: 70px;
+// background-color: blue;
+
   p {
     font-size: 12px;
   }
+  .small-avatar {
+  border: 2px solid black;
+  }
+
 }
 
 h5 {

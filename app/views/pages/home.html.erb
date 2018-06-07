@@ -16,9 +16,9 @@
         <ul>
           <li> <strong>
             <% if current_user.provider == "facebook" %>
-                    <%= current_user.first_name %><%= current_user.id %>
+                    <p class="pseudo"> <%= current_user.first_name %><%= current_user.id %> </p>
             <% else %>
-                    <p><%= current_user.pseudo %></p>
+                    <p class="pseudo"><%= current_user.pseudo %></p>
                   <% end %></strong></li>
           <li> <strong>level</strong> : <%= current_user.level %></li>
           <li> <strong>Point total</strong> : <%= current_user.score %></li>
@@ -70,41 +70,48 @@
         <div class="ranking">
           <h5 class="text-center">Classement local <i class="fas fa-trophy"></i></h5>
           <hr>
+          <div class="list-organised">
           <ul class="list-unstyled">
             <% @list_to_show.each_with_index do |user, index|  %>
               <li>
-               <strong> #<%= index + 1 %> <span><%= " " %></span>  </strong>
+              <p class="rank-nb">#<%= index + 1 %></p>
                 <% if user.provider == "facebook" %>
                     <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35 %>
-                    <%= user.first_name %><%= user.id %>
-                    (<%= user.score %> points)
+                  <div class="user-details">
+                   <p><%= user.first_name %><%= user.id %></p>
+                    <p class="user-score"><%= user.score %> points</p>
+                  </div>
                   <% elsif user.photo.present? %>
                     <%= cl_image_tag user.photo, class:'small-avatar', height: 35, width: 35 %>
-                    <%= user.pseudo %>
-                    (<%= user.score %> points)
+                    <div class="user-details">
+                    <p><%= user.pseudo %></p>
+                    <p class="user-score"><%= user.score %> points</p>
+                  </div>
                   <% else %>
                     <%= image_tag "green_trash.png", class:'small-avatar', height: 35, width: 35 %>
-                    <%= user.pseudo %>
-                  (<%= user.score %> points)
+                   <div  class="user-details">
+                    <p><%= user.pseudo %></p>
+                  <p class="user-score"><%= user.score %> points</p>
+                </div>
                   <% end %>
               </li>
             <% end %>
          </ul>
+         </div>
         </div>
       </div>
     </div>
     <div class="col-xs-12">
       <div class="podium">
 
-        <div class="toptrois text-center">
 
-          <ul class="list-inline">
+          <ul class="list-inline podium-list">
             <% @up.each do |user| %>
               <li>
-                <div class="podium-position text-center">
+                <div class="podium-position">
                   <% if user.provider == "facebook" %>
                     <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35  %>
-                  <p>  <%= user.first_name %><%= user.id %></p>
+                  <p><%= user.first_name %><%= user.id %></p>
                   <% elsif user.photo.present? %>
                     <%= cl_image_tag user.photo, class:'small-avatar',height: 35, width: 35 %>
                     <p><%= user.pseudo %></p>
@@ -117,9 +124,8 @@
             <% end %>
           </ul>
 
-          <%= image_tag "podium.png", height:'80', width:'auto' %>
+          <%= image_tag "podium.png", height:'auto', width:'90%' %>
 
-        </div>
 
       </div>
     </div>
