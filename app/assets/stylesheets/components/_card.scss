@@ -75,21 +75,27 @@
   //height: 30vh;
   display: flex;
   background-color: white;
-  margin-bottom: 10vh;
-  padding-bottom: 2vh;
+  // margin-bottom: 10vh;
+  // padding-bottom: 2vh;
   padding-top: 2vh;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 35px;
 }
 
 .podium-list {
- width: 90%;
+ width: 83%;
  // background-color: blue;
  display: flex;
  justify-content: space-between;
- padding: 0 10px;
-}
+ // padding: 0 10px;
+ z-index: 1;
+ position: absolute;
+ padding-top: 82px;
+ padding-right: 2px;
+ padding-left: 1px;
 
+}
 
 
 .ranking {
