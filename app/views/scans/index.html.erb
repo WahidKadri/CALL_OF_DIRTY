@@ -21,23 +21,27 @@
                 <h2><%= scan.product.brand %></h2>
                 <p><%= scan.product.name %></p>
                 <% scan.product.packagings.each do |packaging| %>
-                  <p><%= packaging.name %></p>
+                  <div class="container without-margin">
+                <div class="row">
+                  <div class="encadrement solution"><%= packaging.name %></div>
                   <% if packaging.bin.color == "blanc" %>
-                    <div class ="circle-border">
+                    <div class="bin-with-description">
                       <%= image_tag "white_trash.png", height:'50vh' %>
-                      <p> verre</p>
+                      <p>verre</p>
                     </div>
                   <% elsif packaging.bin.color == "jaune" %>
-                    <div class ="circle-border">
-                      <%= image_tag "yellow_trash2.png", class:'circle-border', height:'50vh' %>
+                    <div class="bin-with-description">
+                      <%= image_tag "yellow_trash2.png", height:'50vh' %>
                       <p> papier, carton, plastique, métaux</p>
-                    </div>
+                    </div class="bin-with-description">
                   <% else %>
-                    <div class ="circle-border">
-                      <%= image_tag "green_trash2.png", class:'circle-border', height:'50vh' %>
+                    <div class="bin-with-description">
+                      <%= image_tag "green_trash2.png", height:'50vh' %>
                       <p> poubelle</p>
                     </div>
                   <% end %>
+                  </div>
+                </div>
                 <% end %>
                 <div class="source text-center">
                   <% if scan.product.source == "reliable" %>
