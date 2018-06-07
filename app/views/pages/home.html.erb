@@ -42,17 +42,38 @@
           </i>
 
           <% if !UserBadge.find_by(user: current_user, badge_id: 1).nil? %>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-              <span class="sr-only">100% Complete</span>
+
+          <% if UserBadge.find_by(user: current_user, badge_id: 1).point == 0 %>
+
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                <span class="sr-only">0% Complete</span>
+                </div>
               </div>
-            </div>
+
+             <% elsif UserBadge.find_by(user: current_user, badge_id: 1).point == 1 %>
+
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+
+
+              <% end %>
+
           <% else %>
+
+
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
               <span class="sr-only">0% Complete</span>
               </div>
             </div>
+
+
          <% end %>
         </div>
       </div>
@@ -73,7 +94,16 @@
 
           <% if !UserBadge.find_by(user: current_user, badge_id: 2).nil? %>
 
-             <% if UserBadge.find_by(user: current_user, badge_id: 2).point == 1 %>
+          <% if UserBadge.find_by(user: current_user, badge_id: 2).point == 0 %>
+
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                <span class="sr-only">0% Complete</span>
+                </div>
+              </div>
+
+             <% elsif UserBadge.find_by(user: current_user, badge_id: 2).point == 1 %>
 
 
               <div class="progress">
@@ -130,7 +160,16 @@
 
           <% if !UserBadge.find_by(user: current_user, badge_id: 3).nil? %>
 
-             <% if UserBadge.find_by(user: current_user, badge_id: 3).point == 1 %>
+           <% if UserBadge.find_by(user: current_user, badge_id: 3).point == 0 %>
+
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                <span class="sr-only">0% Complete</span>
+                </div>
+              </div>
+
+             <% elsif UserBadge.find_by(user: current_user, badge_id: 3).point == 1 %>
 
 
               <div class="progress">
