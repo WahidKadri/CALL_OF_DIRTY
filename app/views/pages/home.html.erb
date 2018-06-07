@@ -138,13 +138,13 @@
               <li>
                 <div class="podium-position">
                   <% if user.provider == "facebook" %>
-                    <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 35, width: 35  %>
+                    <%= image_tag (user.facebook_picture_url), class:'small-avatar',height: 60, width: 60  %>
                   <p><%= user.first_name %><%= user.id %></p>
                   <% elsif user.photo.present? %>
-                    <%= cl_image_tag user.photo, class:'small-avatar',height: 35, width: 35 %>
+                    <%= cl_image_tag user.photo, class:'small-avatar',height: 60, width: 60 %>
                     <p><%= user.pseudo %></p>
                   <% else %>
-                    <%= image_tag "green_trash.png", class:'small-avatar',height: 35, width: 35  %>
+                    <%= image_tag "green_trash.png", class:'small-avatar',height: 60, width: 60  %>
                     <p><%= user.pseudo %></p>
                   <% end %>
                 </div>
@@ -152,7 +152,7 @@
             <% end %>
           </ul>
 
-          <%= image_tag "podium.png", height:'auto', width:'90%' %>
+          <%= image_tag "podium.png", height:'auto', class:'img-podium', width:'90%' %>
 
 
       </div>
@@ -166,5 +166,8 @@
 </main>
 <div class="background-card">
 </div>
+
+
+
 
 
