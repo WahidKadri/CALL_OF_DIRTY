@@ -1,24 +1,18 @@
-.form-control {
-    font-family: "FontAwesome", "Source Sans Pro";
+.search {
     font-family: "FontAwesome", "Source Sans Pro";
     position: relative;
-    /* top: 50%; */
     left: 50%;
-    /* height: 100%; */
     border-radius: 7px;
     box-shadow: 0 6px 8px #4195b6;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    /* background: white; */
     transition: all 0.3s ease;
   }
 
 
 .field-icon {
     font-size: 14px;
-    /* background: none; */
     color: #5a6674;
-    /* width: 195px; */
     height: 30px;
     border: none;
     -webkit-appearance: none;
