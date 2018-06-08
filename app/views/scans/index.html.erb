@@ -3,17 +3,18 @@
     <% @scans.each do |scan| %>
         <div class="row">
           <div class="col-xs-12">
-            <div class="container-card" data-target="#modal-scan-<%= scan.id %>" data-toggle="modal" >
+            <div class="container-card" >
               <div class="picture" style="background-image: url('<%= scan.product.photo %>'), radial-gradient(farthest-corner at 20px 50px, rgba(18,32,104,0) 0%, rgba(18,32,104,0) 70%, rgba(18,32,104,1) 97%);"></div>
               <p><i class="fas fa-barcode"></i> <%= scan.created_at.strftime("%d/%m/%Y") %> à <%= scan.created_at.strftime('%H:%M') %></p>
               <div class="navigation">
                 <h2><%= scan.product.brand %></h2>
                 <p><%= scan.product.name %></p>
               </div>
+              <a class='card-link' href="#" data-target="#modal-scan-<%= scan.id %>" data-toggle="modal" ></a>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="modal-scan-<%= scan.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="modal-scan-<%= scan.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-body">
@@ -52,9 +53,9 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <%= link_to scans_path, class:'btn btn-success btn-scan' do %>
+                <div class='btn btn-success btn-scan' data-dismiss="modal">
                   <i class="fas fa-check"></i>
-                <% end %>
+                </div>
               </div>
             </div>
           </div>
