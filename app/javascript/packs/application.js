@@ -23,26 +23,23 @@ $(document).ready(function(){
   });
 });
 
- Quagga.init({
+if (document.querySelector('#barcode-scanner')){
+  Quagga.init({
    inputStream : {
      name : "Live",
      type : "LiveStream",
-     constraints: {
-        width: 320
-    },
      target: document.querySelector('#barcode-scanner')    // Or '#yourElement' (optional)
    },
    decoder : {
      readers : ['ean_reader']
    }
- }, function(err) {
+  }, function(err) {
    if (err) {
-       console.log(err);
        return
    }
-   console.log("Initialization finished. Ready to start");
    Quagga.start();
- });
+  });
+}
 
  Quagga.onDetected(function(result) {
    const input = document.getElementById('product_bar_code');

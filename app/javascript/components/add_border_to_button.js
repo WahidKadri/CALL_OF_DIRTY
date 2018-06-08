@@ -8,7 +8,6 @@ function addBorderToButton() {
       // })
       const fieldset = event.currentTarget.closest("fieldset");
       const formButtons = fieldset.querySelectorAll(".form-check");
-      console.log(formButtons);
       formButtons.forEach(function(btn) {
         btn.classList.remove("circle-border");
       })
