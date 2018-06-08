@@ -17,7 +17,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-body">
-                <%= image_tag "#{scan.product.photo}" %>
+                <%= image_tag "#{scan.product.photo}", class:"container-card" %>
                 <h2><%= scan.product.brand %></h2>
                 <p><%= scan.product.name %></p>
                 <% scan.product.packagings.each do |packaging| %>
