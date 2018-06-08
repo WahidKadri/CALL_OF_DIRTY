@@ -1,14 +1,16 @@
-# Bin.destroy_all
+Product.create(
+ brand: "Bledina",
+ bar_code: "3041090030192",
+ description: "",
+ photo: "https://static.openfoodfacts.org/images/products/304/109/114/6939/front_fr.4.200.jpg",
+ name: "Blediner - duo de carottes et patates douces semoule lait",
+ source: "")
 
-# colors = ["jaune", "blanc", "vert"]
+puts "produit créé"
 
-# colors.each do |color|
-#   Bin.create(color: color)
-# end
+Packaging.create(name: "barquette plastique", bin_id: 3, product_id: Product.last.id, material: nil)
+Packaging.create(name: "couvercle plastique", bin_id: 3, product_id: Product.last.id, material: nil)
+Packaging.create(name: "étui carton", bin_id: 1, product_id: Product.last.id, material: nil)
+Packaging.create(name: "opercule métal", bin_id: 1, product_id: Product.last.id, material: nil)
 
-
-Badge.create(title: "Yes I scan!", level: 1)
-Badge.create(title: "Surdoué! ", level: 3)
-Badge.create(title: "Paparazzi!", level: 3)
-
-puts "colors + Badges créés "
+puts "Packagings créés"
