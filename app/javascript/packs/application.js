@@ -1,6 +1,5 @@
 import "bootstrap";
 import { addBorderToButton } from "../components/add_border_to_button.js";
-// import "modal";
 import {showModal} from "../components/show_modal.js";
 import Quagga from 'quagga'; // ES6
 addBorderToButton();
@@ -48,3 +47,4 @@ if (document.querySelector('#barcode-scanner')){
    form.submit();
    Quagga.stop()
  });
+
