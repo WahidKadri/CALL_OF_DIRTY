@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'bootsnap', require: false
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'figaro'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
@@ -10,10 +10,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.2'
+gem "railties", ">= 5.2.2.1"
+gem "actionview", ">= 5.2.2.1"
 gem 'redis'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sass-rails'
 gem 'simple_form'
